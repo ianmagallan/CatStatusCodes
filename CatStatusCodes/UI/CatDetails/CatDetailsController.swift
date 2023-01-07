@@ -26,10 +26,6 @@ final class CatDetailsController: UIViewController {
         }
     }
     
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
-    
     // MARK: - Private properties -
     
     private var viewModel: CatDetailsViewModel? {
@@ -38,6 +34,8 @@ final class CatDetailsController: UIViewController {
         }
     }
     private var anyCancellableBag = Set<AnyCancellable>()
+    
+    // MARK: - Lifecycle -
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +60,8 @@ final class CatDetailsController: UIViewController {
     }
 }
 
+// MARK: - UIScrollViewDelegate -
+
 extension CatDetailsController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let isScrollingDown = scrollView.contentOffset.y >= 0
@@ -79,6 +79,8 @@ extension CatDetailsController: UIScrollViewDelegate {
             CGRect(x: 0, y: -contentRectYOffset, width: 1, height: 1)
     }
 }
+
+// MARK: - Constants -
 
 extension CatDetailsController {
     private enum Constants {
