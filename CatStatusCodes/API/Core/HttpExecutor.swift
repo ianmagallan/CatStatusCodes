@@ -26,7 +26,7 @@ final class HttpExecutor: HttpExecuting {
                     throw CatError.unknown(localizedDescription: nil)
                 }
 
-                if (200..<300).contains(response.statusCode) {
+                if (200 ..< 300).contains(response.statusCode) {
                     return data
                 } else {
                     throw CatError.wrongStatusCode(statusCode: response.statusCode)

@@ -5,9 +5,9 @@
 //  Created by Ian Magallan on 7/1/23.
 //
 
+@testable import CatStatusCodes
 import Combine
 import Foundation
-@testable import CatStatusCodes
 
 final class MockSession: Sessioning {
     var stubbedData: Data!

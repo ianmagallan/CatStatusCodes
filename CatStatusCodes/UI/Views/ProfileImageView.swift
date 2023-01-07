@@ -12,12 +12,12 @@ final class ProfileImageView: UIImageView {
         super.init(coder: coder)
         setUp()
     }
-    
+
     private func setUp() {
         layer.borderColor = UIColor.gray.cgColor
         layer.borderWidth = 1
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
         layer.cornerRadius = frame.height / 2

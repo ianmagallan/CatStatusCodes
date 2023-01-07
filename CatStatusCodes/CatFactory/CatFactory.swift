@@ -41,7 +41,7 @@ struct CatFactory: CatFactoring {
             .init(statusCode: 401, description: Localized("cat.unauthorized")),
             .init(statusCode: 402, description: Localized("cat.payment_required")),
             .init(statusCode: 403, description: Localized("cat.forbidden")),
-            .init(statusCode: 404, description:Localized("cat.not_found")),
+            .init(statusCode: 404, description: Localized("cat.not_found")),
             .init(statusCode: 405, description: Localized("cat.method_not_allowed")),
             .init(statusCode: 406, description: Localized("cat.not_acceptable")),
             .init(statusCode: 407, description: Localized("cat.proxy_authenitcation_required")),
@@ -76,8 +76,7 @@ struct CatFactory: CatFactoring {
             .init(statusCode: 507, description: Localized("cat.insufficient_storage")),
             .init(statusCode: 508, description: Localized("cat.loop_detected")),
             .init(statusCode: 510, description: Localized("cat.not_extended")),
-            .init(statusCode: 511, description: Localized("cat.network_authentication_required"))
-
+            .init(statusCode: 511, description: Localized("cat.network_authentication_required")),
         ]
     }
 }

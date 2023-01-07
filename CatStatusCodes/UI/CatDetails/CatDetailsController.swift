@@ -11,14 +11,14 @@ import UIKit
 final class CatDetailsController: UIViewController {
     // MARK: - Subviews -
 
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var theImageView: UIImageView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var gradientView: GradientView!
-    @IBOutlet weak var headerTopConstraint: NSLayoutConstraint!
-    @IBOutlet weak var headerHeightConstraint: NSLayoutConstraint!
-    
+    @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var theImageView: UIImageView!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet var gradientView: GradientView!
+    @IBOutlet var headerTopConstraint: NSLayoutConstraint!
+    @IBOutlet var headerHeightConstraint: NSLayoutConstraint!
+
     // MARK: - Public properties -
 
     var statusCode: Int! {
@@ -26,15 +26,16 @@ final class CatDetailsController: UIViewController {
             viewModel = .init(statusCode: statusCode)
         }
     }
-    
+
     // MARK: - Private properties -
-    
+
     private var headerHeight = 300.0
     private var viewModel: CatDetailsViewModel? {
         didSet {
             fetchCatImage()
         }
     }
+
     private var anyCancellableBag = Set<AnyCancellable>()
     private var isGradientViewHidden = false {
         didSet {
@@ -48,17 +49,17 @@ final class CatDetailsController: UIViewController {
             }
         }
     }
-    
+
     // MARK: - Lifecycle -
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.delegate = self
         titleLabel.text = Localized("cat_details.description")
     }
-    
+
     // MARK: - Requests -
-    
+
     private func fetchCatImage() {
         viewModel?.fetchCatImage()
             .sink { [weak self] result in
@@ -71,7 +72,7 @@ final class CatDetailsController: UIViewController {
             } receiveValue: { [weak self] data in self?.setUpImage(data: data) }
             .store(in: &anyCancellableBag)
     }
-    
+
     private func setUpImage(data: Data) {
         guard let uiImage = UIImage(data: data) else {
             return
@@ -81,9 +82,9 @@ final class CatDetailsController: UIViewController {
         headerHeight = aspectRatio * (view.bounds.width + Constants.additionalValueForParallax)
         headerHeightConstraint.constant = headerHeight
     }
-    
+
     // MARK: - Alert -
-    
+
     private func showErrorAlert() {
         let alertController = UIAlertController(
             title: Localized("cat_details.alert.title"),
@@ -98,7 +99,6 @@ final class CatDetailsController: UIViewController {
         alertController.addAction(retryAction)
 
         present(alertController, animated: true, completion: nil)
-
     }
 }
 
@@ -109,7 +109,7 @@ extension CatDetailsController: UIScrollViewDelegate {
         updateParallaxEffectIfNeeded(scrollViewYOffset: scrollView.contentOffset.y)
         isGradientViewHidden = scrollView.contentOffset.y >= scrollView.contentSize.height - scrollView.frame.size.height
     }
-    
+
     private func updateParallaxEffectIfNeeded(scrollViewYOffset: Double) {
         let isScrollingDown = scrollView.contentOffset.y >= 0
         guard isScrollingDown else {

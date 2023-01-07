@@ -23,7 +23,7 @@ final class CatProvider: CatProviding {
         self.requestFactory = requestFactory
         self.httpExecutor = httpExecutor
     }
-    
+
     func fetchCat(statusCode: Int) -> AnyPublisher<Data, CatError> {
         httpExecutor.execute(request: requestFactory.fetchCat(statusCode: statusCode))
     }

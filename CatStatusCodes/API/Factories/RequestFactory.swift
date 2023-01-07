@@ -8,7 +8,6 @@
 import Foundation
 
 protocol RequestFactoring {
-    //func fetchCats() -> URLRequest
     func fetchCat(statusCode: Int) -> URLRequest
 }
 
@@ -24,7 +23,7 @@ final class RequestFactory: RequestFactoring {
     func fetchCat(statusCode: Int) -> URLRequest {
         var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         components?.path = "/\(statusCode).jpg"
-        
+
         guard let url = components?.url else {
             fatalError("fetchCat request URL could not be created")
         }

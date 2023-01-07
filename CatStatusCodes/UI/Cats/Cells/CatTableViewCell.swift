@@ -9,20 +9,19 @@ import UIKit
 
 final class CatTableViewCell: UITableViewCell {
     // MARK: - Subviews -
-    
-    @IBOutlet weak var theImageView: ProfileImageView!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var lastSeenLabel: UILabel!
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+
+    @IBOutlet var theImageView: ProfileImageView!
+    @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet var lastSeenLabel: UILabel!
+
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier _: String?) {
         super.init(style: style, reuseIdentifier: Self.reuseIdentifier)
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-    
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -32,7 +31,6 @@ final class CatTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
 }
 
 extension CatTableViewCell {

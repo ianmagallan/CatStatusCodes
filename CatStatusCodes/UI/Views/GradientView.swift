@@ -9,7 +9,7 @@ import UIKit
 
 final class GradientView: UIView {
     // MARK: - Properties -
-        
+
     override class var layerClass: AnyClass {
         CAGradientLayer.classForCoder()
     }
@@ -19,7 +19,7 @@ final class GradientView: UIView {
             setUpGradient()
         }
     }
-    
+
     // MARK: - Lifecycle -
 
     required init?(coder aDecoder: NSCoder) {
@@ -33,7 +33,7 @@ final class GradientView: UIView {
             setUpGradient()
         }
     }
-    
+
     // MARK: - Set up -
 
     private func setUp() {
@@ -45,7 +45,7 @@ final class GradientView: UIView {
         if let foregroundColor {
             (layer as? CAGradientLayer)?.colors = [
                 foregroundColor.withAlphaComponent(0.0).cgColor,
-                foregroundColor.cgColor
+                foregroundColor.cgColor,
             ]
         }
     }

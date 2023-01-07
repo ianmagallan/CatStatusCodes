@@ -17,7 +17,7 @@ final class Storage: Storing {
         let defaults = UserDefaults.standard
         defaults.set(date.timeIntervalSinceReferenceDate, forKey: key)
     }
-    
+
     func retrieveDate(forKey key: String) -> Date? {
         let defaults = UserDefaults.standard
         if let storedDate = defaults.value(forKey: key) as? Double {

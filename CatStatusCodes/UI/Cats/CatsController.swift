@@ -9,31 +9,31 @@ import UIKit
 
 final class CatsTableViewController: UITableViewController {
     // MARK: - Properties -
-    
+
     private let viewModel = CatsViewModel()
-    
+
     // MARK: - Lifecycle -
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTableView()
         registerCells()
         bindViewModel()
     }
-    
+
     private func setUpTableView() {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorColor = .clear
     }
-    
+
     private func registerCells() {
         tableView.register(
             UINib(nibName: String(describing: CatTableViewCell.self), bundle: nil),
             forCellReuseIdentifier: CatTableViewCell.reuseIdentifier
         )
     }
-    
+
     private func bindViewModel() {
         viewModel.didUpdateCats = { [tableView] in
             tableView?.reloadData()
@@ -45,10 +45,10 @@ final class CatsTableViewController: UITableViewController {
 // MARK: - TableView lifecycle -
 
 extension CatsTableViewController {
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         viewModel.cats.count
     }
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CatTableViewCell.reuseIdentifier) as! CatTableViewCell
         let lastSeenString = viewModel.lastSeen(forRow: indexPath.row)
@@ -58,7 +58,6 @@ extension CatsTableViewController {
         return cell
     }
 
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = Bundle.main.loadNibNamed(
             String(describing: CatDetailsController.self),
