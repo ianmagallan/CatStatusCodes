@@ -5,6 +5,7 @@
 //  Created by Ian Magallan on 6/1/23.
 //
 
+import CatStatusCodesAPI
 import Combine
 import Foundation
 

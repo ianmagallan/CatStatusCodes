@@ -1,6 +1,6 @@
 //
 //  Session.swift
-//  CatStatusCodes
+//  CatStatusCodesAPI
 //
 //  Created by Ian Magallan on 6/1/23.
 //
@@ -8,12 +8,15 @@
 import Combine
 import Foundation
 
-protocol Sessioning {
+public protocol Sessioning {
     func dataTaskPublisher(for request: URLRequest) -> AnyPublisher<(data: Data, response: URLResponse), Error>
 }
 
-struct Session: Sessioning {
-    func dataTaskPublisher(for request: URLRequest) -> AnyPublisher<(data: Data, response: URLResponse), Error> {
+public struct Session: Sessioning {
+    
+    public init() {}
+    
+    public func dataTaskPublisher(for request: URLRequest) -> AnyPublisher<(data: Data, response: URLResponse), Error> {
         URLSession.shared
             .dataTaskPublisher(for: request)
             .receive(on: DispatchQueue.main)

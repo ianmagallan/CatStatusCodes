@@ -1,6 +1,6 @@
 //
 //  HttpExecutor.swift
-//  CatStatusCodes
+//  CatStatusCodesAPI
 //
 //  Created by Ian Magallan on 6/1/23.
 //
@@ -8,18 +8,18 @@
 import Combine
 import Foundation
 
-protocol HttpExecuting {
+public protocol HttpExecuting {
     func execute(request: URLRequest) -> AnyPublisher<Data, CatError>
 }
 
-final class HttpExecutor: HttpExecuting {
-    let session: Sessioning
+public final class HttpExecutor: HttpExecuting {
+    private let session: Sessioning
 
-    init(session: Sessioning = Session()) {
+    public init(session: Sessioning = Session()) {
         self.session = session
     }
 
-    func execute(request: URLRequest) -> AnyPublisher<Data, CatError> {
+    public func execute(request: URLRequest) -> AnyPublisher<Data, CatError> {
         session.dataTaskPublisher(for: request)
             .tryMap { data, response in
                 guard let response = response as? HTTPURLResponse else {

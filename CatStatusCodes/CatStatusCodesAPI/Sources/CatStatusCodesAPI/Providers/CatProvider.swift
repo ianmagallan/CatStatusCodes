@@ -1,6 +1,6 @@
 //
 //  CatProviding.swift
-//  CatStatusCodes
+//  CatStatusCodesAPI
 //
 //  Created by Ian Magallan on 6/1/23.
 //
@@ -8,15 +8,15 @@
 import Combine
 import Foundation
 
-protocol CatProviding {
+public protocol CatProviding {
     func fetchCat(statusCode: Int) -> AnyPublisher<Data, CatError>
 }
 
-final class CatProvider: CatProviding {
+public final class CatProvider: CatProviding {
     private let requestFactory: RequestFactoring
     private let httpExecutor: HttpExecuting
 
-    init(
+    public init(
         requestFactory: RequestFactoring = RequestFactory(),
         httpExecutor: HttpExecuting = HttpExecutor()
     ) {
@@ -24,7 +24,7 @@ final class CatProvider: CatProviding {
         self.httpExecutor = httpExecutor
     }
 
-    func fetchCat(statusCode: Int) -> AnyPublisher<Data, CatError> {
+    public func fetchCat(statusCode: Int) -> AnyPublisher<Data, CatError> {
         httpExecutor.execute(request: requestFactory.fetchCat(statusCode: statusCode))
     }
 }

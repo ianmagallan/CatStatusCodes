@@ -1,17 +1,17 @@
 //
 //  RequestFactory.swift
-//  CatStatusCodes
+//  CatStatusCodesAPI
 //
 //  Created by Ian Magallan on 6/1/23.
 //
 
 import Foundation
 
-protocol RequestFactoring {
+public protocol RequestFactoring {
     func fetchCat(statusCode: Int) -> URLRequest
 }
 
-final class RequestFactory: RequestFactoring {
+public final class RequestFactory: RequestFactoring {
     private var baseURL: URL {
         guard let url = URL(string: "https://http.cat") else {
             fatalError("Base URL could not be created")
@@ -19,8 +19,10 @@ final class RequestFactory: RequestFactoring {
 
         return url
     }
+    
+    public init() {}
 
-    func fetchCat(statusCode: Int) -> URLRequest {
+    public func fetchCat(statusCode: Int) -> URLRequest {
         var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         components?.path = "/\(statusCode).jpg"
 

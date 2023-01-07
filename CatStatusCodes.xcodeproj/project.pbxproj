@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5123E8B5296A333400BE4A74 /* CatStatusCodesAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 5123E8B4296A333400BE4A74 /* CatStatusCodesAPI */; };
 		518B8905296848A200337861 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B8904296848A200337861 /* AppDelegate.swift */; };
 		518B8907296848A200337861 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B8906296848A200337861 /* SceneDelegate.swift */; };
 		518B8909296848A200337861 /* CatsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B8908296848A200337861 /* CatsController.swift */; };
 		518B890E296848A400337861 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 518B890D296848A400337861 /* Assets.xcassets */; };
 		518B8911296848A400337861 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 518B890F296848A400337861 /* LaunchScreen.storyboard */; };
 		518B891C296848A400337861 /* CatsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B891B296848A400337861 /* CatsViewModelTests.swift */; };
-		518B8945296852F800337861 /* CatError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B8944296852F800337861 /* CatError.swift */; };
 		518B89482968534A00337861 /* Cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B89472968534A00337861 /* Cat.swift */; };
 		518B894B2968537900337861 /* CatFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B894A2968537900337861 /* CatFactory.swift */; };
 		518B894E29685AE700337861 /* CatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B894D29685AE700337861 /* CatsViewModel.swift */; };
@@ -24,10 +24,6 @@
 		518B89612968CFEA00337861 /* CatDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 518B89602968CFEA00337861 /* CatDetailsController.xib */; };
 		518B89652968D21700337861 /* CatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B89632968D21700337861 /* CatTableViewCell.swift */; };
 		518B89662968D21700337861 /* CatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 518B89642968D21700337861 /* CatTableViewCell.xib */; };
-		518D3EB829697270009EFE4B /* HttpExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518D3EB629697270009EFE4B /* HttpExecutor.swift */; };
-		518D3EB929697270009EFE4B /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518D3EB729697270009EFE4B /* Session.swift */; };
-		518D3EBB29697279009EFE4B /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518D3EBA29697279009EFE4B /* RequestFactory.swift */; };
-		518D3EBD2969727F009EFE4B /* CatProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518D3EBC2969727F009EFE4B /* CatProvider.swift */; };
 		518D3EC129697A5A009EFE4B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 518D3EC329697A5A009EFE4B /* Localizable.strings */; };
 		518D3EC529697B44009EFE4B /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518D3EC429697B44009EFE4B /* Localized.swift */; };
 		518D3EC8296987A8009EFE4B /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518D3EC7296987A8009EFE4B /* Storage.swift */; };
@@ -63,7 +59,6 @@
 		518B8912296848A400337861 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		518B8917296848A400337861 /* CatStatusCodesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatStatusCodesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		518B891B296848A400337861 /* CatsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsViewModelTests.swift; sourceTree = "<group>"; };
-		518B8944296852F800337861 /* CatError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatError.swift; sourceTree = "<group>"; };
 		518B89472968534A00337861 /* Cat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cat.swift; sourceTree = "<group>"; };
 		518B894A2968537900337861 /* CatFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFactory.swift; sourceTree = "<group>"; };
 		518B894D29685AE700337861 /* CatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsViewModel.swift; sourceTree = "<group>"; };
@@ -74,10 +69,6 @@
 		518B89602968CFEA00337861 /* CatDetailsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatDetailsController.xib; sourceTree = "<group>"; };
 		518B89632968D21700337861 /* CatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatTableViewCell.swift; sourceTree = "<group>"; };
 		518B89642968D21700337861 /* CatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatTableViewCell.xib; sourceTree = "<group>"; };
-		518D3EB629697270009EFE4B /* HttpExecutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpExecutor.swift; sourceTree = "<group>"; };
-		518D3EB729697270009EFE4B /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
-		518D3EBA29697279009EFE4B /* RequestFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestFactory.swift; sourceTree = "<group>"; };
-		518D3EBC2969727F009EFE4B /* CatProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatProvider.swift; sourceTree = "<group>"; };
 		518D3EC229697A5A009EFE4B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		518D3EC429697B44009EFE4B /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
 		518D3EC7296987A8009EFE4B /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
@@ -91,6 +82,7 @@
 		51BFFAFD296A246800A543A4 /* MockSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSession.swift; sourceTree = "<group>"; };
 		51BFFAFF296A2A9100A543A4 /* CatProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatProviderTests.swift; sourceTree = "<group>"; };
 		51BFFB01296A2B2600A543A4 /* MockExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockExecutor.swift; sourceTree = "<group>"; };
+		51BFFB05296A304700A543A4 /* CatStatusCodesAPI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CatStatusCodesAPI; path = CatStatusCodes/CatStatusCodesAPI; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5123E8B5296A333400BE4A74 /* CatStatusCodesAPI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,12 +104,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5123E8B3296A333400BE4A74 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		518B88F8296848A200337861 = {
 			isa = PBXGroup;
 			children = (
+				51BFFB03296A2E8100A543A4 /* Packages */,
 				518B8903296848A200337861 /* CatStatusCodes */,
 				518B891A296848A400337861 /* CatStatusCodesTests */,
 				518B8902296848A200337861 /* Products */,
+				5123E8B3296A333400BE4A74 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,7 +138,6 @@
 				518B8904296848A200337861 /* AppDelegate.swift */,
 				518B8906296848A200337861 /* SceneDelegate.swift */,
 				518B890D296848A400337861 /* Assets.xcassets */,
-				518B89362968517600337861 /* API */,
 				518B89492968537200337861 /* CatFactory */,
 				518B890F296848A400337861 /* LaunchScreen.storyboard */,
 				518D3EBE29697A42009EFE4B /* Localized */,
@@ -157,42 +158,6 @@
 				51BFFAF8296A20DC00A543A4 /* CatDetailsViewModelTests.swift */,
 			);
 			path = CatStatusCodesTests;
-			sourceTree = "<group>";
-		};
-		518B89362968517600337861 /* API */ = {
-			isa = PBXGroup;
-			children = (
-				518B893B296851B000337861 /* Providers */,
-				518B893A296851AB00337861 /* Factories */,
-				518B8939296851A600337861 /* Core */,
-			);
-			path = API;
-			sourceTree = "<group>";
-		};
-		518B8939296851A600337861 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				518D3EB629697270009EFE4B /* HttpExecutor.swift */,
-				518D3EB729697270009EFE4B /* Session.swift */,
-				518B8944296852F800337861 /* CatError.swift */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		518B893A296851AB00337861 /* Factories */ = {
-			isa = PBXGroup;
-			children = (
-				518D3EBA29697279009EFE4B /* RequestFactory.swift */,
-			);
-			path = Factories;
-			sourceTree = "<group>";
-		};
-		518B893B296851B000337861 /* Providers */ = {
-			isa = PBXGroup;
-			children = (
-				518D3EBC2969727F009EFE4B /* CatProvider.swift */,
-			);
-			path = Providers;
 			sourceTree = "<group>";
 		};
 		518B89462968533700337861 /* Models */ = {
@@ -306,6 +271,14 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		51BFFB03296A2E8100A543A4 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				51BFFB05296A304700A543A4 /* CatStatusCodesAPI */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -322,6 +295,9 @@
 			dependencies = (
 			);
 			name = CatStatusCodes;
+			packageProductDependencies = (
+				5123E8B4296A333400BE4A74 /* CatStatusCodesAPI */,
+			);
 			productName = CatStatusCodes;
 			productReference = 518B8901296848A200337861 /* CatStatusCodes.app */;
 			productType = "com.apple.product-type.application";
@@ -412,18 +388,13 @@
 			files = (
 				518B8909296848A200337861 /* CatsController.swift in Sources */,
 				518D3EC529697B44009EFE4B /* Localized.swift in Sources */,
-				518D3EBD2969727F009EFE4B /* CatProvider.swift in Sources */,
 				518B895729687AC700337861 /* ProfileImageView.swift in Sources */,
 				518B894E29685AE700337861 /* CatsViewModel.swift in Sources */,
 				518B894B2968537900337861 /* CatFactory.swift in Sources */,
 				518B895B29688B3D00337861 /* CatDetailsController.swift in Sources */,
-				518B8945296852F800337861 /* CatError.swift in Sources */,
 				51BFFAF5296A067700A543A4 /* GradientView.swift in Sources */,
 				518B895D29688D9700337861 /* CatDetailsViewModel.swift in Sources */,
-				518D3EB929697270009EFE4B /* Session.swift in Sources */,
 				518B89482968534A00337861 /* Cat.swift in Sources */,
-				518D3EB829697270009EFE4B /* HttpExecutor.swift in Sources */,
-				518D3EBB29697279009EFE4B /* RequestFactory.swift in Sources */,
 				518B89652968D21700337861 /* CatTableViewCell.swift in Sources */,
 				518B8905296848A200337861 /* AppDelegate.swift in Sources */,
 				518D3EC8296987A8009EFE4B /* Storage.swift in Sources */,
@@ -713,6 +684,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5123E8B4296A333400BE4A74 /* CatStatusCodesAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CatStatusCodesAPI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 518B88F9296848A200337861 /* Project object */;
 }
