@@ -8,28 +8,36 @@
 import UIKit
 
 final class CatsTableViewController: UITableViewController {
+    // MARK: - Properties -
     
     private let viewModel = CatsViewModel()
+    
+    // MARK: - Lifecycle -
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.dataSource = self
         self.tableView.delegate = self
         registerCells()
+        bindViewModel()
     }
     
     private func registerCells() {
-        tableView.register(UINib(nibName: "CatTableViewCell", bundle: nil), forCellReuseIdentifier: "catTableViewCell")
+        tableView.register(
+            UINib(nibName: String(describing: CatTableViewCell.self), bundle: nil),
+            forCellReuseIdentifier: CatTableViewCell.reuseIdentifier
+        )
     }
     
-    /*
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "catDetails", let indexPath = tableView.indexPathForSelectedRow {
-            let destinationVC = segue.destination as! CatDetailsController
-            destinationVC.statusCode = viewModel.cats[indexPath.row].statusCode
+    private func bindViewModel() {
+        viewModel.didUpdateCats = { [tableView] in
+            tableView?.reloadData()
         }
-    }*/
+        viewModel.start()
+    }
 }
+
+// MARK: - TableView lifecycle -
 
 extension CatsTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -37,22 +45,23 @@ extension CatsTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "catTableViewCell") as! CatTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: CatTableViewCell.reuseIdentifier) as! CatTableViewCell
         cell.descriptionLabel.text = viewModel.makeFullDescription(forRow: indexPath.row)
+        cell.lastSeenLabel.text = viewModel.lastSeen(forRow: indexPath.row)
         return cell
     }
 
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = Bundle.main.loadNibNamed("CatDetailsController", owner: self, options: nil)?[0] as! CatDetailsController
+        let vc = Bundle.main.loadNibNamed(
+            String(describing: CatDetailsController.self),
+            owner: self,
+            options: nil
+        )?.first as! CatDetailsController
         vc.statusCode = viewModel.cats[indexPath.row].statusCode
-        //let vc = CatDetailsController(nibName: "CatDetailsController", bundle: nil)
-        //let catDetailsController = CatDetailsController.make(statusCode: viewModel.cats[indexPath.row].statusCode)
-        //catDetailsController.modalPresentationStyle = .overFullScreen
-        present(vc, animated: true, completion: nil)
-
-        //let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        //let destinationVC = storyboard.instantiateViewController(withIdentifier: "CatDetailsController") as! CatDetailsController
-        //destinationVC.init(statusCode: viewModel.cats[indexPath.row].statusCode)
+        present(vc, animated: true) { [weak self] in
+            self?.viewModel.updateLastSeenDate(forRow: indexPath.row)
+            tableView.deselectRow(at: indexPath, animated: false)
+        }
     }
 }

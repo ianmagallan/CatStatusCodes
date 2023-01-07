@@ -12,10 +12,19 @@ final class CatTableViewCell: UITableViewCell {
     
     @IBOutlet weak var theImageView: ProfileImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var lastSeenLabel: UILabel!
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: Self.reuseIdentifier)
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -24,4 +33,8 @@ final class CatTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+}
+
+extension CatTableViewCell {
+    static let reuseIdentifier = "catTableViewCell"
 }
