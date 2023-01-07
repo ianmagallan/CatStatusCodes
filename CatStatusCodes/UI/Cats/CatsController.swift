@@ -16,10 +16,15 @@ final class CatsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.dataSource = self
-        self.tableView.delegate = self
+        setUpTableView()
         registerCells()
         bindViewModel()
+    }
+    
+    private func setUpTableView() {
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.separatorColor = .clear
     }
     
     private func registerCells() {

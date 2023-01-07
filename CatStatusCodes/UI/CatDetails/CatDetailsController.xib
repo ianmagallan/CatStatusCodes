@@ -14,7 +14,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
-                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9oI-T9-r5k">
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" bounces="NO" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9oI-T9-r5k">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <subviews>
                             <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7M-HL-a3D">
@@ -51,7 +51,7 @@
                             <constraint firstItem="M7M-HL-a3D" firstAttribute="top" secondItem="9oI-T9-r5k" secondAttribute="top" id="QmG-J7-1NJ"/>
                             <constraint firstAttribute="trailing" secondItem="zLw-Vf-Rm9" secondAttribute="trailing" constant="24" id="T2U-XD-AuL"/>
                             <constraint firstAttribute="trailing" secondItem="M7M-HL-a3D" secondAttribute="trailing" id="TX3-GD-ihN"/>
-                            <constraint firstAttribute="bottom" secondItem="zLw-Vf-Rm9" secondAttribute="bottom" id="VIF-yM-jPG"/>
+                            <constraint firstAttribute="bottom" secondItem="zLw-Vf-Rm9" secondAttribute="bottom" constant="12" id="VIF-yM-jPG"/>
                             <constraint firstItem="M7M-HL-a3D" firstAttribute="width" secondItem="9oI-T9-r5k" secondAttribute="width" id="WfX-fo-W0f"/>
                             <constraint firstItem="M7M-HL-a3D" firstAttribute="centerX" secondItem="9oI-T9-r5k" secondAttribute="centerX" id="eba-vL-f74"/>
                             <constraint firstItem="zLw-Vf-Rm9" firstAttribute="leading" secondItem="9oI-T9-r5k" secondAttribute="leading" constant="24" id="gjw-hb-GNF"/>

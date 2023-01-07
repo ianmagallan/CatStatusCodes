@@ -29,6 +29,7 @@ final class CatDetailsController: UIViewController {
     
     // MARK: - Private properties -
     
+    private var headerHeight = 300.0
     private var viewModel: CatDetailsViewModel? {
         didSet {
             fetchCatImage()
@@ -67,10 +68,18 @@ final class CatDetailsController: UIViewController {
                     self?.theImageView.image = UIImage(named: "imPlaceholderCat")
                     self?.showErrorAlert()
                 }
-            } receiveValue: { [weak self] data in
-                self?.theImageView.image = UIImage(data: data)
-            }
+            } receiveValue: { [weak self] data in self?.setUpImage(data: data) }
             .store(in: &anyCancellableBag)
+    }
+    
+    private func setUpImage(data: Data) {
+        guard let uiImage = UIImage(data: data) else {
+            return
+        }
+        let aspectRatio = 2 - uiImage.size.width / uiImage.size.height
+        theImageView.image = uiImage
+        headerHeight = aspectRatio * (view.bounds.width + Constants.additionalValueForParallax)
+        headerHeightConstraint.constant = headerHeight
     }
     
     // MARK: - Alert -
@@ -111,10 +120,10 @@ extension CatDetailsController: UIScrollViewDelegate {
         }
         let yOffset = scrollViewYOffset * Constants.parallaxFactor
         let availableOffset = min(yOffset, Constants.minYOffset)
-        let contentRectYOffset = availableOffset / Constants.headerHeight
+        let contentRectYOffset = availableOffset / headerHeight
         headerTopConstraint?.constant = view.frame.origin.y
         headerHeightConstraint?.constant =
-            max(Constants.headerHeight - scrollViewYOffset, 0)
+            max(headerHeight - scrollViewYOffset, 0)
         theImageView.layer.contentsRect =
             CGRect(x: 0, y: -contentRectYOffset, width: 1, height: 1)
     }
@@ -124,9 +133,9 @@ extension CatDetailsController: UIScrollViewDelegate {
 
 extension CatDetailsController {
     private enum Constants {
-        static let headerHeight = 300.0
         static let parallaxFactor = 0.25
         static let minYOffset = 8.0
         static let gradientViewHeight = 150.0
+        static let additionalValueForParallax = 100.0
     }
 }
