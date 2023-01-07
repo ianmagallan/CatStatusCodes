@@ -34,6 +34,7 @@
 		51BFFAEE2969AE4C00A543A4 /* MockStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BFFAED2969AE4C00A543A4 /* MockStorage.swift */; };
 		51BFFAF02969B09700A543A4 /* MockCatFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BFFAEF2969B09700A543A4 /* MockCatFactory.swift */; };
 		51BFFAF32969B3C600A543A4 /* Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BFFAF22969B3C600A543A4 /* Stub.swift */; };
+		51BFFAF5296A067700A543A4 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BFFAF4296A067700A543A4 /* GradientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		51BFFAED2969AE4C00A543A4 /* MockStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStorage.swift; sourceTree = "<group>"; };
 		51BFFAEF2969B09700A543A4 /* MockCatFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCatFactory.swift; sourceTree = "<group>"; };
 		51BFFAF22969B3C600A543A4 /* Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stub.swift; sourceTree = "<group>"; };
+		51BFFAF4296A067700A543A4 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				518B895629687AC700337861 /* ProfileImageView.swift */,
+				51BFFAF4296A067700A543A4 /* GradientView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				518B894B2968537900337861 /* CatFactory.swift in Sources */,
 				518B895B29688B3D00337861 /* CatDetailsController.swift in Sources */,
 				518B8945296852F800337861 /* CatError.swift in Sources */,
+				51BFFAF5296A067700A543A4 /* GradientView.swift in Sources */,
 				518B895D29688D9700337861 /* CatDetailsViewModel.swift in Sources */,
 				518D3EB929697270009EFE4B /* Session.swift in Sources */,
 				518B89482968534A00337861 /* Cat.swift in Sources */,

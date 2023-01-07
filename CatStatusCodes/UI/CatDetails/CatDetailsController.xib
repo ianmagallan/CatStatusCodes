@@ -3,7 +3,6 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -58,18 +57,33 @@
                             <constraint firstItem="zLw-Vf-Rm9" firstAttribute="leading" secondItem="9oI-T9-r5k" secondAttribute="leading" constant="24" id="gjw-hb-GNF"/>
                         </constraints>
                     </scrollView>
+                    <view userInteractionEnabled="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pca-XR-5Be" customClass="GradientView" customModule="CatStatusCodes" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="702" width="393" height="150"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="150" id="p6o-DX-Zq9"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="foregroundColor">
+                                <color key="value" systemColor="systemBackgroundColor"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                 </subviews>
-                <viewLayoutGuide key="safeArea" id="Ju1-Xy-tkk"/>
                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 <constraints>
                     <constraint firstItem="9oI-T9-r5k" firstAttribute="leading" secondItem="h5k-GJ-wYg" secondAttribute="leading" id="0pi-HF-jbd"/>
+                    <constraint firstItem="pca-XR-5Be" firstAttribute="leading" secondItem="h5k-GJ-wYg" secondAttribute="leading" id="6Wo-2o-v9I"/>
                     <constraint firstAttribute="bottom" secondItem="9oI-T9-r5k" secondAttribute="bottom" id="BYB-ZQ-PDB"/>
                     <constraint firstAttribute="trailing" secondItem="9oI-T9-r5k" secondAttribute="trailing" id="Eim-7a-eVE"/>
+                    <constraint firstAttribute="bottom" secondItem="pca-XR-5Be" secondAttribute="bottom" id="HeX-wJ-jxn"/>
                     <constraint firstItem="9oI-T9-r5k" firstAttribute="top" secondItem="h5k-GJ-wYg" secondAttribute="top" id="NJm-ei-Yia"/>
+                    <constraint firstItem="pca-XR-5Be" firstAttribute="trailing" secondItem="h5k-GJ-wYg" secondAttribute="trailing" id="SqK-bR-VBh"/>
                 </constraints>
             </view>
             <connections>
                 <outlet property="activityIndicator" destination="hUO-8A-2UD" id="HOX-SI-0Yp"/>
+                <outlet property="gradientView" destination="pca-XR-5Be" id="WoC-LS-zqU"/>
                 <outlet property="headerHeightConstraint" destination="ZXu-tt-OXs" id="QEv-Pz-dfe"/>
                 <outlet property="headerTopConstraint" destination="7jU-dC-bve" id="6Or-4a-hgF"/>
                 <outlet property="scrollView" destination="9oI-T9-r5k" id="QdQ-rQ-rEe"/>

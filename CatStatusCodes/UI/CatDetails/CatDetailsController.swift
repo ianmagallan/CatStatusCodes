@@ -15,6 +15,7 @@ final class CatDetailsController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var theImageView: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var gradientView: GradientView!
     @IBOutlet weak var headerTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var headerHeightConstraint: NSLayoutConstraint!
     
@@ -34,6 +35,18 @@ final class CatDetailsController: UIViewController {
         }
     }
     private var anyCancellableBag = Set<AnyCancellable>()
+    private var isGradientViewHidden = false {
+        didSet {
+            if oldValue != isGradientViewHidden {
+                UIView.animate(withDuration: 0.5) { [weak self] in
+                    guard let isGradientViewHidden = self?.isGradientViewHidden else {
+                        return
+                    }
+                    self?.gradientView.alpha = isGradientViewHidden ? 0 : 1
+                }
+            }
+        }
+    }
     
     // MARK: - Lifecycle -
     
@@ -87,17 +100,21 @@ final class CatDetailsController: UIViewController {
 
 extension CatDetailsController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        updateParallaxEffectIfNeeded(scrollViewYOffset: scrollView.contentOffset.y)
+        isGradientViewHidden = scrollView.contentOffset.y >= scrollView.contentSize.height - scrollView.frame.size.height
+    }
+    
+    private func updateParallaxEffectIfNeeded(scrollViewYOffset: Double) {
         let isScrollingDown = scrollView.contentOffset.y >= 0
         guard isScrollingDown else {
             return
         }
-
-        let yOffset = scrollView.contentOffset.y * Constants.parallaxFactor
+        let yOffset = scrollViewYOffset * Constants.parallaxFactor
         let availableOffset = min(yOffset, Constants.minYOffset)
         let contentRectYOffset = availableOffset / Constants.headerHeight
         headerTopConstraint?.constant = view.frame.origin.y
         headerHeightConstraint?.constant =
-            max(Constants.headerHeight - scrollView.contentOffset.y, 0)
+            max(Constants.headerHeight - scrollViewYOffset, 0)
         theImageView.layer.contentsRect =
             CGRect(x: 0, y: -contentRectYOffset, width: 1, height: 1)
     }
@@ -110,5 +127,6 @@ extension CatDetailsController {
         static let headerHeight = 300.0
         static let parallaxFactor = 0.25
         static let minYOffset = 8.0
+        static let gradientViewHeight = 150.0
     }
 }
