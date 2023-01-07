@@ -11,22 +11,19 @@ import UIKit
 final class CatDetailsController: UIViewController {
     // MARK: - Subviews -
 
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var theImageView: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-  //  @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
-
+    @IBOutlet weak var headerTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var headerHeightConstraint: NSLayoutConstraint!
+    
     // MARK: - Public properties -
 
     var statusCode: Int! {
         didSet {
             viewModel = .init(statusCode: statusCode)
         }
-    }
-    
-    private init(statusCode: Int) {
-        self.statusCode = statusCode
-        super.init(nibName: "CatDetailsController", bundle: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -42,6 +39,12 @@ final class CatDetailsController: UIViewController {
     }
     private var anyCancellableBag = Set<AnyCancellable>()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        scrollView.delegate = self
+        titleLabel.text = Localized("cat_details.description")
+    }
+    
     private func bindViewModel() {
         viewModel?.fetchCatImage()
             .sink { [weak self] result in
@@ -54,21 +57,33 @@ final class CatDetailsController: UIViewController {
                 }
             } receiveValue: { [weak self] data in
                 self?.theImageView.image = UIImage(data: data)
-                self?.setUpImageHeight()
             }
             .store(in: &anyCancellableBag)
     }
-    
-    private func setUpImageHeight() {
-        guard let image = theImageView.image else {
+}
+
+extension CatDetailsController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let isScrollingDown = scrollView.contentOffset.y >= 0
+        guard isScrollingDown else {
             return
         }
-  //      imageHeightConstraint.constant = image.size.height * image.scale
+
+        let yOffset = scrollView.contentOffset.y * Constants.parallaxFactor
+        let availableOffset = min(yOffset, Constants.minYOffset)
+        let contentRectYOffset = availableOffset / Constants.headerHeight
+        headerTopConstraint?.constant = view.frame.origin.y
+        headerHeightConstraint?.constant =
+            max(Constants.headerHeight - scrollView.contentOffset.y, 0)
+        theImageView.layer.contentsRect =
+            CGRect(x: 0, y: -contentRectYOffset, width: 1, height: 1)
     }
 }
 
 extension CatDetailsController {
-    static func make(statusCode: Int) -> UIViewController {
-        CatDetailsController(statusCode: statusCode)
+    private enum Constants {
+        static let headerHeight = 300.0
+        static let parallaxFactor = 0.25
+        static let minYOffset = 8.0
     }
 }
