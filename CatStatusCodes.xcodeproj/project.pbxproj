@@ -9,13 +9,25 @@
 /* Begin PBXBuildFile section */
 		518B8905296848A200337861 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B8904296848A200337861 /* AppDelegate.swift */; };
 		518B8907296848A200337861 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B8906296848A200337861 /* SceneDelegate.swift */; };
-		518B8909296848A200337861 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B8908296848A200337861 /* ViewController.swift */; };
-		518B890C296848A200337861 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 518B890A296848A200337861 /* Main.storyboard */; };
+		518B8909296848A200337861 /* CatsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B8908296848A200337861 /* CatsController.swift */; };
 		518B890E296848A400337861 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 518B890D296848A400337861 /* Assets.xcassets */; };
 		518B8911296848A400337861 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 518B890F296848A400337861 /* LaunchScreen.storyboard */; };
 		518B891C296848A400337861 /* CatStatusCodesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B891B296848A400337861 /* CatStatusCodesTests.swift */; };
-		518B8926296848A400337861 /* CatStatusCodesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B8925296848A400337861 /* CatStatusCodesUITests.swift */; };
-		518B8928296848A400337861 /* CatStatusCodesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B8927296848A400337861 /* CatStatusCodesUITestsLaunchTests.swift */; };
+		518B893D296851B800337861 /* CatProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B893C296851B800337861 /* CatProvider.swift */; };
+		518B893F296851C500337861 /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B893E296851C500337861 /* RequestFactory.swift */; };
+		518B8942296851CA00337861 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B8940296851CA00337861 /* Session.swift */; };
+		518B8943296851CA00337861 /* HttpExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B8941296851CA00337861 /* HttpExecutor.swift */; };
+		518B8945296852F800337861 /* CatError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B8944296852F800337861 /* CatError.swift */; };
+		518B89482968534A00337861 /* Cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B89472968534A00337861 /* Cat.swift */; };
+		518B894B2968537900337861 /* CatFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B894A2968537900337861 /* CatFactory.swift */; };
+		518B894E29685AE700337861 /* CatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B894D29685AE700337861 /* CatsViewModel.swift */; };
+		518B895729687AC700337861 /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B895629687AC700337861 /* ProfileImageView.swift */; };
+		518B895B29688B3D00337861 /* CatDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B895A29688B3D00337861 /* CatDetailsController.swift */; };
+		518B895D29688D9700337861 /* CatDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B895C29688D9700337861 /* CatDetailsViewModel.swift */; };
+		518B895F2968CDE700337861 /* CatsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 518B895E2968CDE700337861 /* CatsController.xib */; };
+		518B89612968CFEA00337861 /* CatDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 518B89602968CFEA00337861 /* CatDetailsController.xib */; };
+		518B89652968D21700337861 /* CatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B89632968D21700337861 /* CatTableViewCell.swift */; };
+		518B89662968D21700337861 /* CatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 518B89642968D21700337861 /* CatTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,16 +51,28 @@
 		518B8901296848A200337861 /* CatStatusCodes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatStatusCodes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		518B8904296848A200337861 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		518B8906296848A200337861 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		518B8908296848A200337861 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		518B890B296848A200337861 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		518B8908296848A200337861 /* CatsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsController.swift; sourceTree = "<group>"; };
 		518B890D296848A400337861 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		518B8910296848A400337861 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		518B8912296848A400337861 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		518B8917296848A400337861 /* CatStatusCodesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatStatusCodesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		518B891B296848A400337861 /* CatStatusCodesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatStatusCodesTests.swift; sourceTree = "<group>"; };
 		518B8921296848A400337861 /* CatStatusCodesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatStatusCodesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		518B8925296848A400337861 /* CatStatusCodesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatStatusCodesUITests.swift; sourceTree = "<group>"; };
-		518B8927296848A400337861 /* CatStatusCodesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatStatusCodesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		518B893C296851B800337861 /* CatProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CatProvider.swift; path = CatStatusCodes/APITemp/Providers/CatProvider.swift; sourceTree = SOURCE_ROOT; };
+		518B893E296851C500337861 /* RequestFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestFactory.swift; path = CatStatusCodes/APITemp/Factories/RequestFactory.swift; sourceTree = SOURCE_ROOT; };
+		518B8940296851CA00337861 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Session.swift; path = CatStatusCodes/APITemp/Core/Session.swift; sourceTree = SOURCE_ROOT; };
+		518B8941296851CA00337861 /* HttpExecutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpExecutor.swift; path = CatStatusCodes/APITemp/Core/HttpExecutor.swift; sourceTree = SOURCE_ROOT; };
+		518B8944296852F800337861 /* CatError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatError.swift; sourceTree = "<group>"; };
+		518B89472968534A00337861 /* Cat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cat.swift; sourceTree = "<group>"; };
+		518B894A2968537900337861 /* CatFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFactory.swift; sourceTree = "<group>"; };
+		518B894D29685AE700337861 /* CatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsViewModel.swift; sourceTree = "<group>"; };
+		518B895629687AC700337861 /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
+		518B895A29688B3D00337861 /* CatDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDetailsController.swift; sourceTree = "<group>"; };
+		518B895C29688D9700337861 /* CatDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDetailsViewModel.swift; sourceTree = "<group>"; };
+		518B895E2968CDE700337861 /* CatsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatsController.xib; sourceTree = "<group>"; };
+		518B89602968CFEA00337861 /* CatDetailsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatDetailsController.xib; sourceTree = "<group>"; };
+		518B89632968D21700337861 /* CatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatTableViewCell.swift; sourceTree = "<group>"; };
+		518B89642968D21700337861 /* CatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +105,6 @@
 			children = (
 				518B8903296848A200337861 /* CatStatusCodes */,
 				518B891A296848A400337861 /* CatStatusCodesTests */,
-				518B8924296848A400337861 /* CatStatusCodesUITests */,
 				518B8902296848A200337861 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -99,13 +122,15 @@
 		518B8903296848A200337861 /* CatStatusCodes */ = {
 			isa = PBXGroup;
 			children = (
+				518B894C29685AD600337861 /* UI */,
+				518B89492968537200337861 /* CatFactory */,
+				518B8912296848A400337861 /* Info.plist */,
 				518B8904296848A200337861 /* AppDelegate.swift */,
 				518B8906296848A200337861 /* SceneDelegate.swift */,
-				518B8908296848A200337861 /* ViewController.swift */,
-				518B890A296848A200337861 /* Main.storyboard */,
 				518B890D296848A400337861 /* Assets.xcassets */,
+				518B89362968517600337861 /* API */,
 				518B890F296848A400337861 /* LaunchScreen.storyboard */,
-				518B8912296848A400337861 /* Info.plist */,
+				518B89462968533700337861 /* Models */,
 			);
 			path = CatStatusCodes;
 			sourceTree = "<group>";
@@ -118,13 +143,104 @@
 			path = CatStatusCodesTests;
 			sourceTree = "<group>";
 		};
-		518B8924296848A400337861 /* CatStatusCodesUITests */ = {
+		518B89362968517600337861 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				518B8925296848A400337861 /* CatStatusCodesUITests.swift */,
-				518B8927296848A400337861 /* CatStatusCodesUITestsLaunchTests.swift */,
+				518B893B296851B000337861 /* Providers */,
+				518B893A296851AB00337861 /* Factories */,
+				518B8939296851A600337861 /* Core */,
 			);
-			path = CatStatusCodesUITests;
+			path = API;
+			sourceTree = "<group>";
+		};
+		518B8939296851A600337861 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				518B8941296851CA00337861 /* HttpExecutor.swift */,
+				518B8940296851CA00337861 /* Session.swift */,
+				518B8944296852F800337861 /* CatError.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		518B893A296851AB00337861 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				518B893E296851C500337861 /* RequestFactory.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
+		518B893B296851B000337861 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				518B893C296851B800337861 /* CatProvider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		518B89462968533700337861 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				518B89472968534A00337861 /* Cat.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		518B89492968537200337861 /* CatFactory */ = {
+			isa = PBXGroup;
+			children = (
+				518B894A2968537900337861 /* CatFactory.swift */,
+			);
+			path = CatFactory;
+			sourceTree = "<group>";
+		};
+		518B894C29685AD600337861 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				518B895929688B2700337861 /* CatDetails */,
+				518B895829688B1F00337861 /* Cats */,
+				518B894F29685D1900337861 /* Views */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		518B894F29685D1900337861 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				518B895629687AC700337861 /* ProfileImageView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		518B895829688B1F00337861 /* Cats */ = {
+			isa = PBXGroup;
+			children = (
+				518B89622968D1F800337861 /* Cells */,
+				518B8908296848A200337861 /* CatsController.swift */,
+				518B894D29685AE700337861 /* CatsViewModel.swift */,
+				518B895E2968CDE700337861 /* CatsController.xib */,
+			);
+			path = Cats;
+			sourceTree = "<group>";
+		};
+		518B895929688B2700337861 /* CatDetails */ = {
+			isa = PBXGroup;
+			children = (
+				518B895A29688B3D00337861 /* CatDetailsController.swift */,
+				518B895C29688D9700337861 /* CatDetailsViewModel.swift */,
+				518B89602968CFEA00337861 /* CatDetailsController.xib */,
+			);
+			path = CatDetails;
+			sourceTree = "<group>";
+		};
+		518B89622968D1F800337861 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				518B89632968D21700337861 /* CatTableViewCell.swift */,
+				518B89642968D21700337861 /* CatTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,9 +347,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				518B89612968CFEA00337861 /* CatDetailsController.xib in Resources */,
+				518B89662968D21700337861 /* CatTableViewCell.xib in Resources */,
 				518B8911296848A400337861 /* LaunchScreen.storyboard in Resources */,
 				518B890E296848A400337861 /* Assets.xcassets in Resources */,
-				518B890C296848A200337861 /* Main.storyboard in Resources */,
+				518B895F2968CDE700337861 /* CatsController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +376,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				518B8909296848A200337861 /* ViewController.swift in Sources */,
+				518B8909296848A200337861 /* CatsController.swift in Sources */,
+				518B895729687AC700337861 /* ProfileImageView.swift in Sources */,
+				518B893F296851C500337861 /* RequestFactory.swift in Sources */,
+				518B894E29685AE700337861 /* CatsViewModel.swift in Sources */,
+				518B8942296851CA00337861 /* Session.swift in Sources */,
+				518B894B2968537900337861 /* CatFactory.swift in Sources */,
+				518B895B29688B3D00337861 /* CatDetailsController.swift in Sources */,
+				518B8945296852F800337861 /* CatError.swift in Sources */,
+				518B895D29688D9700337861 /* CatDetailsViewModel.swift in Sources */,
+				518B8943296851CA00337861 /* HttpExecutor.swift in Sources */,
+				518B89482968534A00337861 /* Cat.swift in Sources */,
+				518B89652968D21700337861 /* CatTableViewCell.swift in Sources */,
 				518B8905296848A200337861 /* AppDelegate.swift in Sources */,
 				518B8907296848A200337861 /* SceneDelegate.swift in Sources */,
+				518B893D296851B800337861 /* CatProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,8 +406,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				518B8928296848A400337861 /* CatStatusCodesUITestsLaunchTests.swift in Sources */,
-				518B8926296848A400337861 /* CatStatusCodesUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +425,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		518B890A296848A200337861 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				518B890B296848A200337861 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		518B890F296848A400337861 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -441,7 +561,6 @@
 				INFOPLIST_FILE = CatStatusCodes/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -468,7 +587,6 @@
 				INFOPLIST_FILE = CatStatusCodes/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
