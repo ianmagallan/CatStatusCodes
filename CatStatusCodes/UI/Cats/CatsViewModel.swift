@@ -14,7 +14,11 @@ final class CatsViewModel {
     
     // MARK: - Public properties -
     
-    private(set) var cats = CatFactory.makeCats()
+    private(set) lazy var cats = catFactory.makeCats() {
+        didSet {
+            didUpdateCats()
+        }
+    }
     
     // MARK: - Private properties -
 
@@ -25,11 +29,13 @@ final class CatsViewModel {
     // MARK: - Dependencies -
     
     private let storage: Storing
+    private let catFactory: CatFactoring
     
     // MARK: - Init -
 
-    init(storage: Storing = Storage()) {
+    init(storage: Storing = Storage(), catFactory: CatFactoring = CatFactory()) {
         self.storage = storage
+        self.catFactory = catFactory
     }
     
     func start() {
@@ -74,7 +80,7 @@ final class CatsViewModel {
         formatter.dateFormat = "EEEE d 'at' HH:mm"
         let formattedDate = formatter.string(from: date)
 
-        return "Last seen: \(formattedDate)"
+        return String(format: Localized("cat.last_seen"), formattedDate)
     }
     
     private func makeLastSeenDate(statusCode: Int) -> Date? {
@@ -98,6 +104,5 @@ final class CatsViewModel {
             }
         }
         cats = seenCats.sorted { $0.statusCode < $1.statusCode } + nonSeenCats
-        didUpdateCats()
     }
 }

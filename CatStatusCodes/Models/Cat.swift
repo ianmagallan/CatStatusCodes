@@ -5,7 +5,7 @@
 //  Created by Ian Magallan on 6/1/23.
 //
 
-struct Cat {
+struct Cat: Equatable {
     let statusCode: Int
     let description: String
 }

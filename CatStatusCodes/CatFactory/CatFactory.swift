@@ -8,11 +8,11 @@
 import Foundation
 
 protocol CatFactoring {
-    static func makeCats() -> [Cat]
+    func makeCats() -> [Cat]
 }
 
-enum CatFactory: CatFactoring {
-    static func makeCats() -> [Cat] {
+struct CatFactory: CatFactoring {
+    func makeCats() -> [Cat] {
         [
             .init(statusCode: 100, description: Localized("cat.continue")),
             .init(statusCode: 101, description: Localized("cat.switching_protocols")),
