@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -40,7 +41,7 @@
                                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLw-Vf-Rm9">
-                                <rect key="frame" x="0.0" y="312" width="393" height="20.333333333333314"/>
+                                <rect key="frame" x="24" y="312" width="345" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -49,15 +50,16 @@
                         <constraints>
                             <constraint firstItem="zLw-Vf-Rm9" firstAttribute="top" secondItem="M7M-HL-a3D" secondAttribute="bottom" constant="12" id="OSP-c5-4V5"/>
                             <constraint firstItem="M7M-HL-a3D" firstAttribute="top" secondItem="9oI-T9-r5k" secondAttribute="top" id="QmG-J7-1NJ"/>
-                            <constraint firstAttribute="trailing" secondItem="zLw-Vf-Rm9" secondAttribute="trailing" id="T2U-XD-AuL"/>
+                            <constraint firstAttribute="trailing" secondItem="zLw-Vf-Rm9" secondAttribute="trailing" constant="24" id="T2U-XD-AuL"/>
                             <constraint firstAttribute="trailing" secondItem="M7M-HL-a3D" secondAttribute="trailing" id="TX3-GD-ihN"/>
                             <constraint firstAttribute="bottom" secondItem="zLw-Vf-Rm9" secondAttribute="bottom" id="VIF-yM-jPG"/>
                             <constraint firstItem="M7M-HL-a3D" firstAttribute="width" secondItem="9oI-T9-r5k" secondAttribute="width" id="WfX-fo-W0f"/>
                             <constraint firstItem="M7M-HL-a3D" firstAttribute="centerX" secondItem="9oI-T9-r5k" secondAttribute="centerX" id="eba-vL-f74"/>
-                            <constraint firstItem="zLw-Vf-Rm9" firstAttribute="leading" secondItem="9oI-T9-r5k" secondAttribute="leading" id="gjw-hb-GNF"/>
+                            <constraint firstItem="zLw-Vf-Rm9" firstAttribute="leading" secondItem="9oI-T9-r5k" secondAttribute="leading" constant="24" id="gjw-hb-GNF"/>
                         </constraints>
                     </scrollView>
                 </subviews>
+                <viewLayoutGuide key="safeArea" id="Ju1-Xy-tkk"/>
                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 <constraints>
                     <constraint firstItem="9oI-T9-r5k" firstAttribute="leading" secondItem="h5k-GJ-wYg" secondAttribute="leading" id="0pi-HF-jbd"/>

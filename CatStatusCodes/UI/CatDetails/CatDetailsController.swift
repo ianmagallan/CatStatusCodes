@@ -30,7 +30,7 @@ final class CatDetailsController: UIViewController {
     
     private var viewModel: CatDetailsViewModel? {
         didSet {
-            bindViewModel()
+            fetchCatImage()
         }
     }
     private var anyCancellableBag = Set<AnyCancellable>()
@@ -43,7 +43,7 @@ final class CatDetailsController: UIViewController {
         titleLabel.text = Localized("cat_details.description")
     }
     
-    private func bindViewModel() {
+    private func fetchCatImage() {
         viewModel?.fetchCatImage()
             .sink { [weak self] result in
                 self?.activityIndicator.isHidden = true
@@ -51,12 +51,35 @@ final class CatDetailsController: UIViewController {
                 case .finished:
                     break
                 case .failure:
-                    break
+                    self?.theImageView.image = UIImage(named: "imPlaceholderCat")
+                    self?.showErrorAlert()
                 }
             } receiveValue: { [weak self] data in
                 self?.theImageView.image = UIImage(data: data)
             }
             .store(in: &anyCancellableBag)
+    }
+    
+    // MARK: - Alert -
+    
+    private func showErrorAlert() {
+        let alertController = UIAlertController(
+            title: Localized("cat_details.alert.title"),
+            message: Localized("cat_details.alert.description"),
+            preferredStyle: .alert
+        )
+
+        let cancelAction = UIAlertAction(title: Localized("cat_details.alert.cancel"), style: .cancel) { _ in
+            // this block will be executed when the user taps the "Cancel" button
+            print("The Cancel button was tapped")
+        }
+        alertController.addAction(cancelAction)
+
+        let retryAction = UIAlertAction(title: Localized("cat_details.alert.retry"), style: .default) { [weak self] _ in self?.fetchCatImage() }
+        alertController.addAction(retryAction)
+
+        present(alertController, animated: true, completion: nil)
+
     }
 }
 

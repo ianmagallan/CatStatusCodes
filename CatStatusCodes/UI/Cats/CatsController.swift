@@ -46,8 +46,10 @@ extension CatsTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CatTableViewCell.reuseIdentifier) as! CatTableViewCell
+        let lastSeenString = viewModel.lastSeen(forRow: indexPath.row)
+        cell.theImageView.image = lastSeenString == nil ? UIImage(named: "imMysteriousCat") : UIImage(named: "imCheckmarkCat")
         cell.descriptionLabel.text = viewModel.makeFullDescription(forRow: indexPath.row)
-        cell.lastSeenLabel.text = viewModel.lastSeen(forRow: indexPath.row)
+        cell.lastSeenLabel.text = lastSeenString
         return cell
     }
 
