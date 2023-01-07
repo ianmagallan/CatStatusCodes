@@ -35,6 +35,12 @@
 		51BFFAF02969B09700A543A4 /* MockCatFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BFFAEF2969B09700A543A4 /* MockCatFactory.swift */; };
 		51BFFAF32969B3C600A543A4 /* Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BFFAF22969B3C600A543A4 /* Stub.swift */; };
 		51BFFAF5296A067700A543A4 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BFFAF4296A067700A543A4 /* GradientView.swift */; };
+		51BFFAF7296A209B00A543A4 /* MockCatProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BFFAF6296A209B00A543A4 /* MockCatProvider.swift */; };
+		51BFFAF9296A20DC00A543A4 /* CatDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BFFAF8296A20DC00A543A4 /* CatDetailsViewModelTests.swift */; };
+		51BFFAFC296A243C00A543A4 /* ExecutorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BFFAFB296A243C00A543A4 /* ExecutorTests.swift */; };
+		51BFFAFE296A246800A543A4 /* MockSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BFFAFD296A246800A543A4 /* MockSession.swift */; };
+		51BFFB00296A2A9100A543A4 /* CatProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BFFAFF296A2A9100A543A4 /* CatProviderTests.swift */; };
+		51BFFB02296A2B2600A543A4 /* MockExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BFFB01296A2B2600A543A4 /* MockExecutor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +85,12 @@
 		51BFFAEF2969B09700A543A4 /* MockCatFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCatFactory.swift; sourceTree = "<group>"; };
 		51BFFAF22969B3C600A543A4 /* Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stub.swift; sourceTree = "<group>"; };
 		51BFFAF4296A067700A543A4 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		51BFFAF6296A209B00A543A4 /* MockCatProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCatProvider.swift; sourceTree = "<group>"; };
+		51BFFAF8296A20DC00A543A4 /* CatDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDetailsViewModelTests.swift; sourceTree = "<group>"; };
+		51BFFAFB296A243C00A543A4 /* ExecutorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutorTests.swift; sourceTree = "<group>"; };
+		51BFFAFD296A246800A543A4 /* MockSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSession.swift; sourceTree = "<group>"; };
+		51BFFAFF296A2A9100A543A4 /* CatProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatProviderTests.swift; sourceTree = "<group>"; };
+		51BFFB01296A2B2600A543A4 /* MockExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockExecutor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,9 +150,11 @@
 		518B891A296848A400337861 /* CatStatusCodesTests */ = {
 			isa = PBXGroup;
 			children = (
+				51BFFAFA296A243100A543A4 /* API */,
 				51BFFAF12969B3BF00A543A4 /* Stub */,
 				51BFFAEC2969AE4200A543A4 /* Mock */,
 				518B891B296848A400337861 /* CatsViewModelTests.swift */,
+				51BFFAF8296A20DC00A543A4 /* CatDetailsViewModelTests.swift */,
 			);
 			path = CatStatusCodesTests;
 			sourceTree = "<group>";
@@ -268,6 +282,9 @@
 			children = (
 				51BFFAED2969AE4C00A543A4 /* MockStorage.swift */,
 				51BFFAEF2969B09700A543A4 /* MockCatFactory.swift */,
+				51BFFAF6296A209B00A543A4 /* MockCatProvider.swift */,
+				51BFFAFD296A246800A543A4 /* MockSession.swift */,
+				51BFFB01296A2B2600A543A4 /* MockExecutor.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -278,6 +295,15 @@
 				51BFFAF22969B3C600A543A4 /* Stub.swift */,
 			);
 			path = Stub;
+			sourceTree = "<group>";
+		};
+		51BFFAFA296A243100A543A4 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				51BFFAFB296A243C00A543A4 /* ExecutorTests.swift */,
+				51BFFAFF296A2A9100A543A4 /* CatProviderTests.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -411,8 +437,14 @@
 			files = (
 				518B891C296848A400337861 /* CatsViewModelTests.swift in Sources */,
 				51BFFAEE2969AE4C00A543A4 /* MockStorage.swift in Sources */,
+				51BFFB02296A2B2600A543A4 /* MockExecutor.swift in Sources */,
+				51BFFAFE296A246800A543A4 /* MockSession.swift in Sources */,
+				51BFFB00296A2A9100A543A4 /* CatProviderTests.swift in Sources */,
 				51BFFAF02969B09700A543A4 /* MockCatFactory.swift in Sources */,
+				51BFFAF7296A209B00A543A4 /* MockCatProvider.swift in Sources */,
+				51BFFAF9296A20DC00A543A4 /* CatDetailsViewModelTests.swift in Sources */,
 				51BFFAF32969B3C600A543A4 /* Stub.swift in Sources */,
+				51BFFAFC296A243C00A543A4 /* ExecutorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
