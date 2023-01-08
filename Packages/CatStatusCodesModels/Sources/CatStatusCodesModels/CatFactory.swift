@@ -1,18 +1,21 @@
 //
 //  CatFactory.swift
-//  CatStatusCodes
+//  CatStatusCodesModels
 //
 //  Created by Ian Magallan on 6/1/23.
 //
 
 import Foundation
 
-protocol CatFactoring {
+public protocol CatFactoring {
     func makeCats() -> [Cat]
 }
 
-struct CatFactory: CatFactoring {
-    func makeCats() -> [Cat] {
+public struct CatFactory: CatFactoring {
+    
+    public init() {}
+    
+    public func makeCats() -> [Cat] {
         [
             .init(statusCode: 100, description: Localized("cat.continue")),
             .init(statusCode: 101, description: Localized("cat.switching_protocols")),

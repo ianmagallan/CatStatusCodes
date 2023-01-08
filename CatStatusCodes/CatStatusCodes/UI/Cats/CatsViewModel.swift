@@ -6,6 +6,7 @@
 //
 
 import CatStatusCodesStorage
+import CatStatusCodesModels
 import Foundation
 
 final class CatsViewModel {

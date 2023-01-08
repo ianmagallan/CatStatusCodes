@@ -6,6 +6,7 @@
 //
 
 @testable import CatStatusCodes
+import CatStatusCodesModels
 import Foundation
 
 enum Stub {
