@@ -29,6 +29,8 @@
 		51AA6294296AC51000BEB943 /* MockCatFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA6293296AC51000BEB943 /* MockCatFactory.swift */; };
 		51AA6296296AC6B100BEB943 /* CatStatusCodesAPIMocks in Frameworks */ = {isa = PBXBuildFile; productRef = 51AA6295296AC6B100BEB943 /* CatStatusCodesAPIMocks */; };
 		51AA6298296AC6E900BEB943 /* CatStatusCodesStorageMocks in Frameworks */ = {isa = PBXBuildFile; productRef = 51AA6297296AC6E900BEB943 /* CatStatusCodesStorageMocks */; };
+		51AA629B296AC90500BEB943 /* CatStatusCodesStorage in Resources */ = {isa = PBXBuildFile; fileRef = 51AA6299296AC90500BEB943 /* CatStatusCodesStorage */; };
+		51AA629C296AC90500BEB943 /* CatStatusCodesAPI in Resources */ = {isa = PBXBuildFile; fileRef = 51AA629A296AC90500BEB943 /* CatStatusCodesAPI */; };
 		51BFFAF32969B3C600A543A4 /* Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BFFAF22969B3C600A543A4 /* Stub.swift */; };
 		51BFFAF5296A067700A543A4 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BFFAF4296A067700A543A4 /* GradientView.swift */; };
 		51BFFAF9296A20DC00A543A4 /* CatDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BFFAF8296A20DC00A543A4 /* CatDetailsViewModelTests.swift */; };
@@ -68,11 +70,11 @@
 		518D3EC229697A5A009EFE4B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		518D3EC429697B44009EFE4B /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
 		51AA6293296AC51000BEB943 /* MockCatFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCatFactory.swift; sourceTree = "<group>"; };
+		51AA6299296AC90500BEB943 /* CatStatusCodesStorage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CatStatusCodesStorage; path = ../Packages/CatStatusCodesStorage; sourceTree = "<group>"; };
+		51AA629A296AC90500BEB943 /* CatStatusCodesAPI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CatStatusCodesAPI; path = ../Packages/CatStatusCodesAPI; sourceTree = "<group>"; };
 		51BFFAF22969B3C600A543A4 /* Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stub.swift; sourceTree = "<group>"; };
 		51BFFAF4296A067700A543A4 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		51BFFAF8296A20DC00A543A4 /* CatDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDetailsViewModelTests.swift; sourceTree = "<group>"; };
-		51BFFB05296A304700A543A4 /* CatStatusCodesAPI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CatStatusCodesAPI; path = CatStatusCodes/CatStatusCodesAPI; sourceTree = "<group>"; };
-		51C95410296AB94A000C3734 /* CatStatusCodesStorage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CatStatusCodesStorage; path = CatStatusCodes/CatStatusCodesStorage; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,8 +246,8 @@
 		51BFFB03296A2E8100A543A4 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				51BFFB05296A304700A543A4 /* CatStatusCodesAPI */,
-				51C95410296AB94A000C3734 /* CatStatusCodesStorage */,
+				51AA629A296AC90500BEB943 /* CatStatusCodesAPI */,
+				51AA6299296AC90500BEB943 /* CatStatusCodesStorage */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -344,6 +346,8 @@
 				518B89662968D21700337861 /* CatTableViewCell.xib in Resources */,
 				518B8911296848A400337861 /* LaunchScreen.storyboard in Resources */,
 				518B890E296848A400337861 /* Assets.xcassets in Resources */,
+				51AA629C296AC90500BEB943 /* CatStatusCodesAPI in Resources */,
+				51AA629B296AC90500BEB943 /* CatStatusCodesStorage in Resources */,
 				518B895F2968CDE700337861 /* CatsController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
