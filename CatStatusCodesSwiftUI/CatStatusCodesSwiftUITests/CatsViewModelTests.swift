@@ -5,9 +5,9 @@
 //  Created by Ian Magallan on 8/1/23.
 //
 
-@testable import CatStatusCodesSwiftUI
 import CatStatusCodesModelsMocks
 import CatStatusCodesStorageMocks
+@testable import CatStatusCodesSwiftUI
 import XCTest
 
 final class CatsViewModelTests: XCTestCase {
@@ -94,7 +94,7 @@ final class CatsViewModelTests: XCTestCase {
         // then
         XCTAssertNil(lastSeenDate)
     }
-    
+
     func testLastSeenDate() {
         // given
         let cat = Stub.cat(statusCode: 1)

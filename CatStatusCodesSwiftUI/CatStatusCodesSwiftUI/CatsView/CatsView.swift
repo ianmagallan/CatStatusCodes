@@ -11,24 +11,26 @@ struct CatsView: View {
     @ObservedObject var viewModel = CatsViewModel()
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List(viewModel.cats, id: \.statusCode) { cat in
-                NavigationLink(destination: CatDetailsView(statusCode: cat.statusCode)) {
-                    Button(action: {
-                        viewModel.updateLastSeenDate(statusCode: cat.statusCode)
-                    }) {
-                        CatRow(
-                            cat: cat,
-                            lastSeenDate: viewModel.makeLastSeenDate(cat: cat)
-                        )
-                    }
+                NavigationLink(destination: makeDetailsView(statusCode: cat.statusCode)) {
+                    CatRow(
+                        cat: cat,
+                        lastSeenDate: viewModel.makeLastSeenDate(cat: cat)
+                    )
                 }
             }
             .listStyle(PlainListStyle())
-            .navigationViewStyle(StackNavigationViewStyle())
+            .navigationViewStyle(.stack)
         }
         .onAppear {
             viewModel.start()
+        }
+    }
+
+    private func makeDetailsView(statusCode: Int) -> some View {
+        CatDetailsView(statusCode: statusCode).onAppear {
+            viewModel.updateLastSeenDate(statusCode: statusCode)
         }
     }
 }

@@ -40,7 +40,7 @@ final class CatsTableViewController: UITableViewController {
         viewModel.didUpdateCats.sink { [weak self] in
             self?.tableView?.reloadData()
         }.store(in: &cancellableBag)
-        
+
         viewModel.start()
     }
 }

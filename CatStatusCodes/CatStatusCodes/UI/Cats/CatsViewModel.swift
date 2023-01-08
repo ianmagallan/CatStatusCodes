@@ -5,9 +5,9 @@
 //  Created by Ian Magallan on 6/1/23.
 //
 
-import Combine
 import CatStatusCodesModels
 import CatStatusCodesStorage
+import Combine
 import Foundation
 
 final class CatsViewModel {

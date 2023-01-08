@@ -5,8 +5,8 @@
 //  Created by Ian Magallan on 8/1/23.
 //
 
-@testable import CatStatusCodesSwiftUI
 import CatStatusCodesAPIMocks
+@testable import CatStatusCodesSwiftUI
 import XCTest
 
 final class CatDetailsViewModelTests: XCTestCase {
@@ -26,14 +26,14 @@ final class CatDetailsViewModelTests: XCTestCase {
 
     func testIsRaining() {
         // given
-        (0...600).filter { $0 < 200 || $0 > 299 }
+        (0 ... 600).filter { $0 < 200 || $0 > 299 }
             .forEach { statusCode in
                 // when && then
                 sut = .init(statusCode: statusCode)
                 XCTAssertTrue(sut.isRaining)
             }
     }
-    
+
     func testIsNotRaining() {
         // given
         (200 ..< 300).forEach { statusCode in

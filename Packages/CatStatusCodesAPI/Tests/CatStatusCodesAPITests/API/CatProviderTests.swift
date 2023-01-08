@@ -20,7 +20,7 @@ final class CatProviderTests: XCTestCase {
         super.setUp()
         httpExecutor = .init()
         httpExecutor.stubbedResult = .success(Stub.data)
-        
+
         requestFactory = .init()
         requestFactory.stubbedFetchCatURL = Stub.url
         requestFactory.stubbedFetchCatRequest = Stub.urlRequest
@@ -30,7 +30,7 @@ final class CatProviderTests: XCTestCase {
     func testFetchCatSuccess() {
         // given
         let expectation = XCTestExpectation(description: "fetch cat with success status code")
-        
+
         // when
         sut.fetchCat(statusCode: 200)
             .sink(receiveCompletion: { completion in
@@ -54,7 +54,7 @@ final class CatProviderTests: XCTestCase {
         httpExecutor.stubbedResult = .failure(.wrongStatusCode(statusCode: 400))
 
         let expectation = XCTestExpectation(description: "fetch cat with error status code")
-        
+
         // when
         sut.fetchCat(statusCode: 400)
             .sink(receiveCompletion: { completion in
@@ -73,7 +73,7 @@ final class CatProviderTests: XCTestCase {
         // then
         wait(for: [expectation], timeout: 1.0)
     }
-    
+
     func testFetchCatURL() {
         // given && when
         let url = sut.fetchCatURL(statusCode: 200)

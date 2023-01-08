@@ -5,10 +5,10 @@
 //  Created by Ian Magallan on 8/1/23.
 //
 
-import XCTest
-@testable import CatStatusCodesSwiftUI
 import CatStatusCodesModels
 import CatStatusCodesModelsMocks
+@testable import CatStatusCodesSwiftUI
+import XCTest
 
 final class CatRowViewModelTests: XCTestCase {
     private var viewModel: CatRowViewModel!
@@ -35,7 +35,7 @@ final class CatRowViewModelTests: XCTestCase {
         formatter.dateFormat = "EEEE d 'at' HH:mm"
         let formattedDate = formatter.string(from: lastSeenDate)
         let expectedLastSeen = String(format: Localized("cat.last_seen"), formattedDate)
-        
+
         // when && then
         XCTAssertEqual(viewModel.lastSeen, expectedLastSeen)
     }

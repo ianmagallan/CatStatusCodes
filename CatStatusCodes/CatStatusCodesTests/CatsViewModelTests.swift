@@ -8,8 +8,8 @@
 @testable import CatStatusCodes
 import CatStatusCodesModelsMocks
 import CatStatusCodesStorageMocks
-import XCTest
 import Combine
+import XCTest
 
 final class CatsViewModelTests: XCTestCase {
     private var sut: CatsViewModel!
