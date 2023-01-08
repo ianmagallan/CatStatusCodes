@@ -21,7 +21,6 @@ struct CatsView: View {
                 }
             }
             .listStyle(PlainListStyle())
-            .navigationViewStyle(.stack)
         }
         .onAppear {
             viewModel.start()
