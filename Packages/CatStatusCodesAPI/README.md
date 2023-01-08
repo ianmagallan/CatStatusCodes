@@ -1,3 +1,3 @@
 # CatStatusCodesAPI
 
-A description of this package.
+This package contains all needed to manage loading cat images.

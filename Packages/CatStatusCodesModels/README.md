@@ -1,3 +1,3 @@
 # CatStatusCodesModels
 
-A description of this package.
+This package contains all needed for the app to use cat models.
