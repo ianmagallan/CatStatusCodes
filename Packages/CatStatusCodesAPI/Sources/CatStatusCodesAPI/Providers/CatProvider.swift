@@ -10,6 +10,7 @@ import Foundation
 
 public protocol CatProviding {
     func fetchCat(statusCode: Int) -> AnyPublisher<Data, CatError>
+    func fetchCatURL(statusCode: Int) -> URL
 }
 
 public final class CatProvider: CatProviding {
@@ -26,5 +27,9 @@ public final class CatProvider: CatProviding {
 
     public func fetchCat(statusCode: Int) -> AnyPublisher<Data, CatError> {
         httpExecutor.execute(request: requestFactory.fetchCat(statusCode: statusCode))
+    }
+
+    public func fetchCatURL(statusCode: Int) -> URL {
+        requestFactory.fetchCatURL(statusCode: statusCode)
     }
 }

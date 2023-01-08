@@ -9,9 +9,8 @@
 import Foundation
 
 public final class MockCatFactory: CatFactoring {
-    
     public init() {}
-    
+
     public var stubbedCats = [Cat]()
     public func makeCats() -> [Cat] {
         stubbedCats

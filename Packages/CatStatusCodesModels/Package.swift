@@ -10,10 +10,12 @@ let package = Package(
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "CatStatusCodesModels",
-            targets: ["CatStatusCodesModels"]),
+            targets: ["CatStatusCodesModels"]
+        ),
         .library(
             name: "CatStatusCodesModelsMocks",
-            targets: ["CatStatusCodesModelsMocks"]),
+            targets: ["CatStatusCodesModelsMocks"]
+        ),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -29,6 +31,7 @@ let package = Package(
         ),
         .target(
             name: "CatStatusCodesModelsMocks",
-            dependencies: ["CatStatusCodesModels"]),
+            dependencies: ["CatStatusCodesModels"]
+        ),
     ]
 )

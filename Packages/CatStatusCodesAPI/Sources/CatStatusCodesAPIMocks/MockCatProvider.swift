@@ -10,9 +10,8 @@ import Combine
 import Foundation
 
 public final class MockCatProvider: CatProviding {
-    
     public init() {}
-    
+
     public var stubbedCatResult: Result<Data, CatError>!
     public func fetchCat(statusCode _: Int) -> AnyPublisher<Data, CatError> {
         Result<Data, CatError>.Publisher(stubbedCatResult).eraseToAnyPublisher()

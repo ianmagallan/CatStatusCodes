@@ -9,13 +9,13 @@ import SwiftUI
 
 struct CircleView: View {
     private let named: String
-    
+
     init(named: String) {
         self.named = named
     }
 
     var body: some View {
-        Image("imMysteriousCat")
+        Image(named)
             .resizable()
             .aspectRatio(contentMode: .fit)
             .clipShape(Circle())

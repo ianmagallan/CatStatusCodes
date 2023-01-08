@@ -1,26 +1,18 @@
 //
 //  CatsViewModel.swift
-//  CatStatusCodes
+//  CatStatusCodesSwiftUI
 //
-//  Created by Ian Magallan on 6/1/23.
+//  Created by Ian Magallan on 8/1/23.
 //
 
 import CatStatusCodesModels
 import CatStatusCodesStorage
 import Foundation
 
-final class CatsViewModel {
-    // MARK: - Actions -
-
-    var didUpdateCats: (() -> Void)!
-
+final class CatsViewModel: ObservableObject {
     // MARK: - Public properties -
 
-    private(set) lazy var cats = catFactory.makeCats() {
-        didSet {
-            didUpdateCats()
-        }
-    }
+    @Published var cats = [Cat]()
 
     // MARK: - Private properties -
 
@@ -41,6 +33,7 @@ final class CatsViewModel {
     }
 
     func start() {
+        cats = catFactory.makeCats()
         loadDatesInCache()
         sortCats()
     }
@@ -54,40 +47,22 @@ final class CatsViewModel {
         }
     }
 
-    // MARK: - Full description -
-
-    func makeFullDescription(forRow index: Int) -> String {
-        let cat = cats[index]
-        return "\(cat.statusCode) \(cat.description)"
-    }
-
     // MARK: - Last seen -
 
-    func updateLastSeenDate(forRow index: Int) {
-        let statusCode = cats[index].statusCode
-        let key = String(statusCode)
+    func updateLastSeenDate(statusCode: Int) {
+        guard let cat = cats.first(where: { $0.statusCode == statusCode }) else {
+            fatalError("Cat not found")
+        }
+        let key = String(cat.statusCode)
         let currentDate = Date()
         storage.storeDate(currentDate, forKey: key)
-        cachedDates[statusCode] = currentDate
+        cachedDates[cat.statusCode] = currentDate
         sortCats()
     }
 
-    func lastSeen(forRow index: Int) -> String? {
-        let statusCode = cats[index].statusCode
-        guard let date = makeLastSeenDate(statusCode: statusCode) else {
-            return nil
-        }
-
-        let formatter = DateFormatter()
-        formatter.dateFormat = "EEEE d 'at' HH:mm"
-        let formattedDate = formatter.string(from: date)
-
-        return String(format: Localized("cat.last_seen"), formattedDate)
-    }
-
-    private func makeLastSeenDate(statusCode: Int) -> Date? {
-        guard let cachedDate = cachedDates[statusCode] else {
-            return storage.retrieveDate(forKey: String(statusCode))
+    func makeLastSeenDate(cat: Cat) -> Date? {
+        guard let cachedDate = cachedDates[cat.statusCode] else {
+            return storage.retrieveDate(forKey: String(cat.statusCode))
         }
 
         return cachedDate

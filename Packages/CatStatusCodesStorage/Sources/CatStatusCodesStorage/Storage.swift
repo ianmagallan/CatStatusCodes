@@ -13,9 +13,8 @@ public protocol Storing {
 }
 
 public final class Storage: Storing {
-    
     public init() {}
-    
+
     public func storeDate(_ date: Date, forKey key: String) {
         let defaults = UserDefaults.standard
         defaults.set(date.timeIntervalSinceReferenceDate, forKey: key)

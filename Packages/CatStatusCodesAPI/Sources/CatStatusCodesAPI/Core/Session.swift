@@ -13,9 +13,8 @@ public protocol Sessioning {
 }
 
 public struct Session: Sessioning {
-    
     public init() {}
-    
+
     public func dataTaskPublisher(for request: URLRequest) -> AnyPublisher<(data: Data, response: URLResponse), Error> {
         URLSession.shared
             .dataTaskPublisher(for: request)

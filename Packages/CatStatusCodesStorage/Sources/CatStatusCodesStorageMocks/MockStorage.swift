@@ -9,9 +9,8 @@
 import Foundation
 
 public final class MockStorage: Storing {
-    
     public init() {}
-    
+
     public var stubbedStoredDates = [String: Date]()
 
     public var invokedStoreDateCount = 0

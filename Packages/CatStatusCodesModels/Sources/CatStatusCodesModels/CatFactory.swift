@@ -12,9 +12,8 @@ public protocol CatFactoring {
 }
 
 public struct CatFactory: CatFactoring {
-    
     public init() {}
-    
+
     public func makeCats() -> [Cat] {
         [
             .init(statusCode: 100, description: Localized("cat.continue")),
