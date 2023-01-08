@@ -5,12 +5,14 @@
 //  Created by Ian Magallan on 6/1/23.
 //
 
+import Combine
 import UIKit
 
 final class CatsTableViewController: UITableViewController {
     // MARK: - Properties -
 
     private let viewModel = CatsViewModel()
+    private var cancellableBag = Set<AnyCancellable>()
 
     // MARK: - Lifecycle -
 
@@ -35,9 +37,10 @@ final class CatsTableViewController: UITableViewController {
     }
 
     private func bindViewModel() {
-        viewModel.didUpdateCats = { [tableView] in
-            tableView?.reloadData()
-        }
+        viewModel.didUpdateCats.sink { [weak self] in
+            self?.tableView?.reloadData()
+        }.store(in: &cancellableBag)
+        
         viewModel.start()
     }
 }

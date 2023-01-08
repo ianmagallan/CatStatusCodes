@@ -9,11 +9,13 @@
 import CatStatusCodesModelsMocks
 import CatStatusCodesStorageMocks
 import XCTest
+import Combine
 
 final class CatsViewModelTests: XCTestCase {
     private var sut: CatsViewModel!
     private var storage: MockStorage!
     private var catFactory: MockCatFactory!
+    private var cancellableBag = Set<AnyCancellable>()
 
     override func setUp() {
         super.setUp()
@@ -21,7 +23,6 @@ final class CatsViewModelTests: XCTestCase {
         storage = .init()
         catFactory = .init()
         sut = .init(storage: storage, catFactory: catFactory)
-        sut.didUpdateCats = {}
     }
 
     // MARK: - Cache initially -
@@ -138,7 +139,7 @@ final class CatsViewModelTests: XCTestCase {
         // given
         catFactory.stubbedCats = [Stub.cat(), Stub.cat(), Stub.cat()]
         var counter = 0
-        sut.didUpdateCats = { counter += 1 }
+        sut.didUpdateCats.sink { counter += 1 }.store(in: &cancellableBag)
 
         // when
         sut.start()
@@ -151,7 +152,7 @@ final class CatsViewModelTests: XCTestCase {
         // given
         catFactory.stubbedCats = [Stub.cat(), Stub.cat(), Stub.cat()]
         var counter = 0
-        sut.didUpdateCats = { counter += 1 }
+        sut.didUpdateCats.sink { counter += 1 }.store(in: &cancellableBag)
 
         // when
         sut.updateLastSeenDate(forRow: 0)

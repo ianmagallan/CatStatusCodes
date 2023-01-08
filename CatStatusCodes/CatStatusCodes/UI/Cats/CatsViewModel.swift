@@ -5,6 +5,7 @@
 //  Created by Ian Magallan on 6/1/23.
 //
 
+import Combine
 import CatStatusCodesModels
 import CatStatusCodesStorage
 import Foundation
@@ -12,13 +13,13 @@ import Foundation
 final class CatsViewModel {
     // MARK: - Actions -
 
-    var didUpdateCats: (() -> Void)!
+    var didUpdateCats = PassthroughSubject<Void, Never>()
 
     // MARK: - Public properties -
 
     private(set) lazy var cats = catFactory.makeCats() {
         didSet {
-            didUpdateCats()
+            didUpdateCats.send()
         }
     }
 
