@@ -13,18 +13,25 @@ import XCTest
 final class CatProviderTests: XCTestCase {
     private var cancellableBag = Set<AnyCancellable>()
     private var httpExecutor: MockHttpExecutor!
+    private var requestFactory: MockRequestFactory!
     private var sut: CatProvider!
 
     override func setUp() {
         super.setUp()
         httpExecutor = .init()
         httpExecutor.stubbedResult = .success(Stub.data)
-        sut = .init(httpExecutor: httpExecutor)
+        
+        requestFactory = .init()
+        requestFactory.stubbedFetchCatURL = Stub.url
+        requestFactory.stubbedFetchCatRequest = Stub.urlRequest
+        sut = .init(requestFactory: requestFactory, httpExecutor: httpExecutor)
     }
 
     func testFetchCatSuccess() {
-        // given && when && then
+        // given
         let expectation = XCTestExpectation(description: "fetch cat with success status code")
+        
+        // when
         sut.fetchCat(statusCode: 200)
             .sink(receiveCompletion: { completion in
                 switch completion {
@@ -38,13 +45,17 @@ final class CatProviderTests: XCTestCase {
             })
             .store(in: &cancellableBag)
 
+        // then
         wait(for: [expectation], timeout: 1.0)
     }
 
     func testFetchCatError() {
+        // given
         httpExecutor.stubbedResult = .failure(.wrongStatusCode(statusCode: 400))
 
         let expectation = XCTestExpectation(description: "fetch cat with error status code")
+        
+        // when
         sut.fetchCat(statusCode: 400)
             .sink(receiveCompletion: { completion in
                 switch completion {
@@ -59,6 +70,15 @@ final class CatProviderTests: XCTestCase {
             })
             .store(in: &cancellableBag)
 
+        // then
         wait(for: [expectation], timeout: 1.0)
+    }
+    
+    func testFetchCatURL() {
+        // given && when
+        let url = sut.fetchCatURL(statusCode: 200)
+
+        // then
+        XCTAssertEqual(url, Stub.url)
     }
 }

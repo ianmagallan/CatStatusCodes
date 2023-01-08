@@ -11,6 +11,7 @@ import Foundation
 enum Stub {
     static let url = URL(string: "https://www.google.com")!
     static let data = Data()
+    static let urlRequest = URLRequest(url: url)
 
     static func response(statusCode: Int = 200) -> HTTPURLResponse {
         .init(url: Stub.url, statusCode: statusCode, httpVersion: nil, headerFields: nil)!

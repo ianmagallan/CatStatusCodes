@@ -16,4 +16,9 @@ public final class MockCatProvider: CatProviding {
     public func fetchCat(statusCode _: Int) -> AnyPublisher<Data, CatError> {
         Result<Data, CatError>.Publisher(stubbedCatResult).eraseToAnyPublisher()
     }
+    
+    public var stubbedCatURL: URL!
+    public func fetchCatURL(statusCode: Int) -> URL {
+        stubbedCatURL
+    }
 }

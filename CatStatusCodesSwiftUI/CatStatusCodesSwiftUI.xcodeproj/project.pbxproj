@@ -9,9 +9,14 @@
 /* Begin PBXBuildFile section */
 		510C4DCA296AD95100482EBB /* CatStatusCodesModels in Frameworks */ = {isa = PBXBuildFile; productRef = 510C4DC9296AD95100482EBB /* CatStatusCodesModels */; };
 		510C4DCC296AD99B00482EBB /* CatRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510C4DCB296AD99B00482EBB /* CatRowViewModel.swift */; };
+		51A4FBA7296B386C001DC844 /* CatsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A4FBA6296B386C001DC844 /* CatsViewModelTests.swift */; };
+		51A4FBA9296B3885001DC844 /* CatStatusCodesModelsMocks in Frameworks */ = {isa = PBXBuildFile; productRef = 51A4FBA8296B3885001DC844 /* CatStatusCodesModelsMocks */; };
+		51A4FBAB296B388E001DC844 /* CatStatusCodesStorageMocks in Frameworks */ = {isa = PBXBuildFile; productRef = 51A4FBAA296B388E001DC844 /* CatStatusCodesStorageMocks */; };
+		51A4FBAD296B3C98001DC844 /* CatDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A4FBAC296B3C98001DC844 /* CatDetailsViewModelTests.swift */; };
+		51A4FBAF296B3F01001DC844 /* CatStatusCodesAPIMocks in Frameworks */ = {isa = PBXBuildFile; productRef = 51A4FBAE296B3F01001DC844 /* CatStatusCodesAPIMocks */; };
 		51AA62AA296AC9E600BEB943 /* CatStatusCodesSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA62A9296AC9E600BEB943 /* CatStatusCodesSwiftUIApp.swift */; };
 		51AA62B1296AC9E800BEB943 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51AA62B0296AC9E800BEB943 /* Preview Assets.xcassets */; };
-		51AA62BB296AC9E900BEB943 /* CatStatusCodesSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA62BA296AC9E900BEB943 /* CatStatusCodesSwiftUITests.swift */; };
+		51AA62BB296AC9E900BEB943 /* CatRowViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA62BA296AC9E900BEB943 /* CatRowViewModelTests.swift */; };
 		51AA62D8296ACA6700BEB943 /* CatStatusCodesAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 51AA62D7296ACA6700BEB943 /* CatStatusCodesAPI */; };
 		51AA62DA296ACA6C00BEB943 /* CatStatusCodesStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 51AA62D9296ACA6C00BEB943 /* CatStatusCodesStorage */; };
 		51AA62DD296ACA8E00BEB943 /* CatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA62DC296ACA8E00BEB943 /* CatsView.swift */; };
@@ -42,11 +47,13 @@
 /* Begin PBXFileReference section */
 		510C4DC8296AD94700482EBB /* CatStatusCodesModels */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CatStatusCodesModels; path = ../Packages/CatStatusCodesModels; sourceTree = "<group>"; };
 		510C4DCB296AD99B00482EBB /* CatRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatRowViewModel.swift; sourceTree = "<group>"; };
+		51A4FBA6296B386C001DC844 /* CatsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsViewModelTests.swift; sourceTree = "<group>"; };
+		51A4FBAC296B3C98001DC844 /* CatDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDetailsViewModelTests.swift; sourceTree = "<group>"; };
 		51AA62A6296AC9E600BEB943 /* CatStatusCodesSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatStatusCodesSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51AA62A9296AC9E600BEB943 /* CatStatusCodesSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatStatusCodesSwiftUIApp.swift; sourceTree = "<group>"; };
 		51AA62B0296AC9E800BEB943 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		51AA62B6296AC9E900BEB943 /* CatStatusCodesSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatStatusCodesSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		51AA62BA296AC9E900BEB943 /* CatStatusCodesSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatStatusCodesSwiftUITests.swift; sourceTree = "<group>"; };
+		51AA62BA296AC9E900BEB943 /* CatRowViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatRowViewModelTests.swift; sourceTree = "<group>"; };
 		51AA62D4296ACA1D00BEB943 /* CatStatusCodesAPI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CatStatusCodesAPI; path = ../Packages/CatStatusCodesAPI; sourceTree = "<group>"; };
 		51AA62D5296ACA2900BEB943 /* CatStatusCodesStorage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CatStatusCodesStorage; path = ../Packages/CatStatusCodesStorage; sourceTree = "<group>"; };
 		51AA62DC296ACA8E00BEB943 /* CatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsView.swift; sourceTree = "<group>"; };
@@ -78,6 +85,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51A4FBAB296B388E001DC844 /* CatStatusCodesStorageMocks in Frameworks */,
+				51A4FBA9296B3885001DC844 /* CatStatusCodesModelsMocks in Frameworks */,
+				51A4FBAF296B3F01001DC844 /* CatStatusCodesAPIMocks in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,7 +139,9 @@
 		51AA62B9296AC9E900BEB943 /* CatStatusCodesSwiftUITests */ = {
 			isa = PBXGroup;
 			children = (
-				51AA62BA296AC9E900BEB943 /* CatStatusCodesSwiftUITests.swift */,
+				51AA62BA296AC9E900BEB943 /* CatRowViewModelTests.swift */,
+				51A4FBA6296B386C001DC844 /* CatsViewModelTests.swift */,
+				51A4FBAC296B3C98001DC844 /* CatDetailsViewModelTests.swift */,
 			);
 			path = CatStatusCodesSwiftUITests;
 			sourceTree = "<group>";
@@ -246,6 +258,11 @@
 				51AA62B8296AC9E900BEB943 /* PBXTargetDependency */,
 			);
 			name = CatStatusCodesSwiftUITests;
+			packageProductDependencies = (
+				51A4FBA8296B3885001DC844 /* CatStatusCodesModelsMocks */,
+				51A4FBAA296B388E001DC844 /* CatStatusCodesStorageMocks */,
+				51A4FBAE296B3F01001DC844 /* CatStatusCodesAPIMocks */,
+			);
 			productName = CatStatusCodesSwiftUITests;
 			productReference = 51AA62B6296AC9E900BEB943 /* CatStatusCodesSwiftUITests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -333,7 +350,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				51AA62BB296AC9E900BEB943 /* CatStatusCodesSwiftUITests.swift in Sources */,
+				51AA62BB296AC9E900BEB943 /* CatRowViewModelTests.swift in Sources */,
+				51A4FBAD296B3C98001DC844 /* CatDetailsViewModelTests.swift in Sources */,
+				51A4FBA7296B386C001DC844 /* CatsViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,6 +622,18 @@
 		510C4DC9296AD95100482EBB /* CatStatusCodesModels */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = CatStatusCodesModels;
+		};
+		51A4FBA8296B3885001DC844 /* CatStatusCodesModelsMocks */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CatStatusCodesModelsMocks;
+		};
+		51A4FBAA296B388E001DC844 /* CatStatusCodesStorageMocks */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CatStatusCodesStorageMocks;
+		};
+		51A4FBAE296B3F01001DC844 /* CatStatusCodesAPIMocks */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CatStatusCodesAPIMocks;
 		};
 		51AA62D7296ACA6700BEB943 /* CatStatusCodesAPI */ = {
 			isa = XCSwiftPackageProductDependency;
