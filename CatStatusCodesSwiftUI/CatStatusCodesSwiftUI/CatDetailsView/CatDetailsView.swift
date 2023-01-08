@@ -18,22 +18,8 @@ struct CatDetailsView: View {
     var body: some View {
         ZStack {
             ScrollView(.vertical, showsIndicators: false) {
-                GeometryReader { reader in
-                    AsyncImage(url: viewModel.fetchCatImageURL()) { phase in
-                        makeViewFromPhase(
-                            phase: phase,
-                            frame: reader.frame(in: .named(Constants.coordinateNameSpace))
-                        )
-                    }
-                }.frame(height: Constants.geometryReaderFrameHeight)
-                VStack(alignment: .leading) {
-                    Text(NSLocalizedString("cat_details.description", comment: ""))
-                        .foregroundColor(.black)
-                        .padding(Constants.textPadding)
-                }.background(.white)
-                    .cornerRadius(Constants.textBackgroundCornerRadius)
-                    .offset(y: Constants.textBackgroundYOffset)
-
+                makeHeaderImageView()
+                makeTextView()
             }.edgesIgnoringSafeArea(.bottom)
                 .coordinateSpace(name: Constants.coordinateNameSpace)
 
@@ -44,15 +30,34 @@ struct CatDetailsView: View {
         }
     }
 
-    @ViewBuilder
-    private func makeViewFromPhase(phase: AsyncImagePhase, frame: CGRect) -> some View {
-        if let image = phase.image {
-            image.headerImageModifier(frame: frame)
-        } else if phase.error != nil {
-            Image("imPlaceholderCat").headerImageModifier(frame: frame)
-        } else {
-            ProgressView()
-        }
+    // MARK: - Header image -
+
+    private func makeHeaderImageView() -> some View {
+        GeometryReader { reader in
+            AsyncImage(url: viewModel.fetchCatImageURL()) { phase in
+                if let image = phase.image {
+                    image
+                        .headerImageModifier(frame: reader.frame(in: .named(Constants.coordinateNameSpace)))
+                } else if phase.error != nil {
+                    Image("imPlaceholderCat")
+                        .headerImageModifier(frame: reader.frame(in: .named(Constants.coordinateNameSpace)))
+                } else {
+                    ProgressView()
+                }
+            }
+        }.frame(height: Constants.geometryReaderFrameHeight)
+    }
+
+    // MARK: - Text -
+
+    private func makeTextView() -> some View {
+        VStack(alignment: .leading) {
+            Text(NSLocalizedString("cat_details.description", comment: ""))
+                .foregroundColor(.black)
+                .padding(Constants.textPadding)
+        }.background(.white)
+            .cornerRadius(Constants.textBackgroundCornerRadius)
+            .offset(y: Constants.textBackgroundYOffset)
     }
 }
 

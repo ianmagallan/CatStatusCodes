@@ -139,9 +139,9 @@
 		51AA62B9296AC9E900BEB943 /* CatStatusCodesSwiftUITests */ = {
 			isa = PBXGroup;
 			children = (
+				51A4FBAC296B3C98001DC844 /* CatDetailsViewModelTests.swift */,
 				51AA62BA296AC9E900BEB943 /* CatRowViewModelTests.swift */,
 				51A4FBA6296B386C001DC844 /* CatsViewModelTests.swift */,
-				51A4FBAC296B3C98001DC844 /* CatDetailsViewModelTests.swift */,
 			);
 			path = CatStatusCodesSwiftUITests;
 			sourceTree = "<group>";
@@ -166,10 +166,10 @@
 		51AA62DB296ACA7F00BEB943 /* CatsView */ = {
 			isa = PBXGroup;
 			children = (
-				51AA62E7296AD10B00BEB943 /* Views */,
-				51AA62E0296ACAC600BEB943 /* Row */,
 				51AA62DC296ACA8E00BEB943 /* CatsView.swift */,
 				51AA62DE296ACA9700BEB943 /* CatsViewModel.swift */,
+				51AA62E0296ACAC600BEB943 /* Row */,
+				51AA62E7296AD10B00BEB943 /* Views */,
 			);
 			path = CatsView;
 			sourceTree = "<group>";
@@ -213,8 +213,8 @@
 			isa = PBXGroup;
 			children = (
 				51FA85D0296B2C7B00A21AF2 /* Rain.sks */,
-				51FA85D1296B2C7B00A21AF2 /* Assets.xcassets */,
 				51FA85D4296B2D1700A21AF2 /* Rain.swift */,
+				51FA85D1296B2C7B00A21AF2 /* Assets.xcassets */,
 			);
 			path = SpriteKit;
 			sourceTree = "<group>";

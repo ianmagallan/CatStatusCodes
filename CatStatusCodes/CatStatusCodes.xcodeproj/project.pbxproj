@@ -196,8 +196,8 @@
 		518D3EBE29697A42009EFE4B /* Localized */ = {
 			isa = PBXGroup;
 			children = (
-				518D3EC329697A5A009EFE4B /* Localizable.strings */,
 				518D3EC429697B44009EFE4B /* Localized.swift */,
+				518D3EC329697A5A009EFE4B /* Localizable.strings */,
 			);
 			path = Localized;
 			sourceTree = "<group>";
