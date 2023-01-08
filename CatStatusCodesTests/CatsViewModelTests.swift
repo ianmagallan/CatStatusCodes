@@ -6,6 +6,7 @@
 //
 
 @testable import CatStatusCodes
+import CatStatusCodesStorageMocks
 import XCTest
 
 final class CatsViewModelTests: XCTestCase {

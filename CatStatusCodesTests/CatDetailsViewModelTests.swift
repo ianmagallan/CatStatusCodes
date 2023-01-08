@@ -6,6 +6,8 @@
 //
 
 @testable import CatStatusCodes
+import CatStatusCodesAPI
+import CatStatusCodesAPIMocks
 import Combine
 import XCTest
 
