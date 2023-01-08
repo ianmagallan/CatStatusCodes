@@ -22,7 +22,7 @@ final class CatRowViewModel: ObservableObject {
         lastSeen = lastSeenDate.flatMap(makeLastSeenDate) ?? ""
         catImageName = makeCatImageName(hasBeenAlreadySeen: !lastSeen.isEmpty)
     }
-    
+
     private func makeLastSeenDate(date: Date) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "EEEE d 'at' HH:mm"
@@ -30,7 +30,7 @@ final class CatRowViewModel: ObservableObject {
 
         return String(format: Localized("cat.last_seen"), formattedDate)
     }
-    
+
     private func makeCatImageName(hasBeenAlreadySeen: Bool) -> String {
         if hasBeenAlreadySeen {
             return Constants.seenCatImageName

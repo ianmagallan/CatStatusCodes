@@ -5,6 +5,7 @@
 //  Created by Ian Magallan on 8/1/23.
 //
 
+import SpriteKit
 import SwiftUI
 
 struct CatDetailsView: View {
@@ -15,27 +16,34 @@ struct CatDetailsView: View {
     }
 
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
-            GeometryReader { reader in
-                AsyncImage(url: viewModel.fetchCatImageURL()) { phase in
-                    makeViewFromPhase(
-                        phase: phase,
-                        frame: reader.frame(in: .named(Constants.coordinateNameSpace))
-                    )
-                }
-            }.frame(height: Constants.geometryReaderFrameHeight)
-            VStack(alignment: .leading) {
-                Text(NSLocalizedString("cat_details.description", comment: ""))
-                    .foregroundColor(.black)
-                    .padding(Constants.textPadding)
-            }.background(.white)
-                .cornerRadius(Constants.textBackgroundCornerRadius)
-                .offset(y: Constants.textBackgroundYOffset)
+        ZStack {
+            ScrollView(.vertical, showsIndicators: false) {
+                GeometryReader { reader in
+                    AsyncImage(url: viewModel.fetchCatImageURL()) { phase in
+                        makeViewFromPhase(
+                            phase: phase,
+                            frame: reader.frame(in: .named(Constants.coordinateNameSpace))
+                        )
+                    }
+                }.frame(height: Constants.geometryReaderFrameHeight)
+                VStack(alignment: .leading) {
+                    Text(NSLocalizedString("cat_details.description", comment: ""))
+                        .foregroundColor(.black)
+                        .padding(Constants.textPadding)
+                }.background(.white)
+                    .cornerRadius(Constants.textBackgroundCornerRadius)
+                    .offset(y: Constants.textBackgroundYOffset)
 
-        }.edgesIgnoringSafeArea(.bottom)
-        .coordinateSpace(name: Constants.coordinateNameSpace)
+            }.edgesIgnoringSafeArea(.bottom)
+                .coordinateSpace(name: Constants.coordinateNameSpace)
+
+            if viewModel.isRaining {
+                SpriteView(scene: Rain(), options: [.allowsTransparency])
+                    .allowsHitTesting(false)
+            }
+        }
     }
-    
+
     @ViewBuilder
     private func makeViewFromPhase(phase: AsyncImagePhase, frame: CGRect) -> some View {
         if let image = phase.image {
@@ -52,8 +60,7 @@ struct CatDetailsView: View {
 
 private extension Image {
     func headerImageModifier(frame: CGRect) -> some View {
-        self
-            .resizable()
+        resizable()
             .aspectRatio(contentMode: .fit)
             .offset(y: -frame.minY)
             .frame(width: UIScreen.main.bounds.width)
